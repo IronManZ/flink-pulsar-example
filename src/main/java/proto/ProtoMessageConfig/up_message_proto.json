@@ -1,0 +1,2049 @@
+{
+    "HighPrecisionIncliData": {
+        "fields": [
+            "angle",
+            "chip_temp",
+            "raw_angle",
+            "digital_angle",
+            "cali_angle"
+        ],
+        "packets": [
+            "IncliHCF2000",
+            "IncliHCF2000V1",
+            "AngleXZJ"
+        ]
+    },
+    "TempHumiData": {
+        "fields": [
+            "addr",
+            "temp",
+            "humi"
+        ],
+        "packets": [
+            "TempHumiHCF600",
+            "TempHumiHOS9010Uart485",
+            "TemperatureHCF500",
+            "TempHumiHOS9010I0RSUC",
+            "TempBGK370002",
+            "TempHT61B10I0RSUC",
+            "TempHumiYTDY0102",
+            "HumiPR3000ECTH",
+            "TempHT61B10CRTX",
+            "TempTmth8",
+            "TempHumiSPRS0F1HOS9010",
+            "TempHumiHT60B10I0RSUC"
+        ]
+    },
+    "VibraWireData": {
+        "fields": [
+            "db",
+            "freq",
+            "temp",
+            "data",
+            "voltage",
+            "sample_interval",
+            "microsecond",
+            "channel",
+            "addr"
+        ],
+        "extend_fields": {
+            "ch_num": "int32",
+            "ch_result": "double",
+            "ch_temper": "double",
+            "ch_init_data": "double",
+            "ch_status": "int32"
+        },
+        "packets": [
+            "VibraWireHFS316",
+            "VibraWireHFS100",
+            "VibraWireHFS200",
+            "VibraWireHFS200V1",
+            "VibraWireHFS400",
+            "VibraWireHFS500",
+            "VibraWireHFS500V1",
+            "Uart485ForHFS316SampleData",
+            "VibraWireHFS530",
+            "VibraWireSCZ0F1",
+            "VibraWireSCZ0N1",
+            "VibraWireHT13110"
+        ]
+    },
+    "AnemometerData": {
+        "fields": [
+            "wind_direction",
+            "wind_speed",
+            "temp",
+            "humi",
+            "dev_temp",
+            "smooth_wind_speed",
+            "smooth_wind_direction",
+            "air_pressure",
+            "addr",
+            "heat_mode",
+            "err_env",
+            "speed_status",
+            "err_heat",
+            "err_ntc",
+            "heat_status",
+            "worktime",
+            "serial_number",
+            "version"
+        ],
+        "packets": [
+            "AnemometerHCF900",
+            "AnemometerHCF910",
+            "FC307DataList",
+            "Uart485ForHCF920SampleData",
+            "Uart485ForHCF930SampleData",
+            "WinderCupSampleHCF910",
+            "AnemometerHCF920I0RSUC",
+            "AnemometerHOS915I0RSUC",
+            "WindSpeedHOS915I1RSUC",
+            "WindDirectionHOS915I2RSUC",
+            "WeatherStationHT92B10I0RSUC",
+            "AnemometerSPRS0F1HOS915",
+            "AnemometerSPRS0F1HCF920"
+        ]
+    },
+    "InclinationData": {
+        "fields": [
+            "absolute_angle",
+            "primary_projection",
+            "secondary_projection"
+        ],
+        "extend_fields": {
+            "chip_temp": "double",
+            "cali_angle_x": "double",
+            "cali_angle_y": "double",
+            "raw_angle_x": "double",
+            "raw_angle_y": "double",
+            "threshold": "double",
+            "is_superthreshold": "uint32",
+            "threshold_x": "double",
+            "threshold_y": "double",
+            "threshold_absolute": "double"
+        },
+        "packets": [
+            "IncliHCF200",
+            "IncliHCF410",
+            "IncliHCF4000",
+            "IncliSS42F1",
+            "IncliSS42N1",
+            "IncliSS42N1V2",
+            "Incli"
+        ]
+    },
+    "VoltageData": {
+        "fields": [
+            "data",
+            "sample_interval",
+            "channel",
+            "microsecond",
+            "sample_type"
+        ],
+        "extend_fields": {
+            "data_x": "double",
+            "data_y": "double"
+        },
+        "packets": [
+            "VoltageHIS100",
+            "VoltageHIS100Cont"
+        ],
+        "extend_packets": [
+            "VoltageMTBatchSampleData",
+            "VoltageMTSingleSampleData"
+        ]
+    },
+    "CurrentData": {
+        "fields": [
+            "data",
+            "sample_interval",
+            "channel",
+            "microsecond",
+            "sample_type"
+        ],
+        "packets": [
+            "CurrentHIS100",
+            "CurrentHIS100Cont"
+        ]
+    },
+    "ResistanceData": {
+        "fields": [
+            "data",
+            "sample_interval",
+            "channel",
+            "microsecond",
+            "sample_type"
+        ],
+        "packets": [
+            "ResistanceHIS100",
+            "ResistanceHIS100Cont"
+        ]
+    },
+    "MillivoltData": {
+        "fields": [
+            "data",
+            "sample_interval",
+            "channel",
+            "microsecond",
+            "sample_type"
+        ],
+        "packets": [
+            "MillivoltHIS100",
+            "MillivoltHIS100Cont"
+        ]
+    },
+    "VibrationData": {
+        "fields": [
+            "data",
+            "range",
+            "sample_interval",
+            "channel",
+            "microsecond"
+        ],
+        "extend_fields": {
+            "speed": "double",
+            "speed_x": "double",
+            "speed_y": "double",
+            "speed_z": "double",
+            "acc": "double",
+            "acc_peek_to_peek": "double",
+            "acc_max_abs": "double",
+            "freq": "double",
+            "acc_rms": "double",
+            "acc_level": "double"
+        },
+        "packets": [
+            "VibraHCF300",
+            "VibraHCF410",
+            "VibraHCF300V1",
+            "VibraHCF3000",
+            "VibraHCF4000"
+        ],
+        "extend_packets": [
+            "Vibra2D00102",
+            "CableVibDataSS40N2",
+            "VibraST44B2",
+            "VibraSS44F1",
+            "VibraMWJS02",
+            "VibraCQMXGT02",
+            "Vibra",
+            "VibraBYS07",
+            "VibraBYS007"
+        ]
+    },
+    "CablePeaksData": {
+        "fields": [
+            "average_power",
+            "axis",
+            "base_freq",
+            "freq",
+            "odr",
+            "peaks",
+            "peaks_num",
+            "values",
+            "quality",
+            "range",
+            "extent"
+        ],
+        "extend_fields": {
+            "cable": "double",
+            "point_width": "uint32",
+            "id": "uint32",
+            "f_value": "repeated float",
+            "t_cable": "double",
+            "peaks_res": "repeated uint32",
+            "peaks_cali": "repeated uint32",
+            "temp": "double",
+            "integral": "double"
+        },
+        "packets": [
+            "CablePeaksHCF100",
+            "CablePeaksHCF4000",
+            "CablePeaksSS40N1"
+        ],
+        "extend_packets": [
+            "CableVibration1B101",
+            "CablePeaksHCN0F80",
+            "CablePeaks"
+        ]
+    },
+    "SettlementData": {
+        "fields": [
+            "addr",
+            "raw_value",
+            "value",
+            "relative_value",
+            "temp",
+            "adc_value",
+            "raw_press",
+            "worktime",
+            "system_status",
+            "pre_cali_raw_value",
+            "pre_cali_relative_value"
+        ],
+        "packets": [
+            "PressHCF700",
+            "Uart485ForHCF700SampleData",
+            "PressHCF700I0RSUC",
+            "PressHCF710I0RSUC",
+            "DeflectionMWJL1",
+            "PressSPRS0F1HCF710"
+        ]
+    },
+    "StressData": {
+        "fields": [
+            "data",
+            "sample_interval",
+            "channel",
+            "microsecond"
+        ],
+        "packets": [
+            "StressHIS300Cont",
+            "StressHIS500",
+            "StressHIS400",
+            "StressHIS400V2"
+        ],
+        "extend_packets": [
+            "StressFBG4000T",
+            "StressFBG5220",
+            "StressFBG5210",
+            "StressZenoptics160",
+            "StressDH1205",
+            "StressMS2",
+            "StressHT11310",
+            "StressHT11311",
+            "Stresszenoptics120"
+        ]
+    },
+    "IncliHCF410V1": {
+        "fields": [
+            "x",
+            "y",
+            "z"
+        ],
+        "packets": [
+            "IncliHCF410V1"
+        ]
+    },
+    "GRTU1000": {
+        "fields": [
+            "gas_channel_1",
+            "gas_channel_2",
+            "gas_channel_3",
+            "gas_channel_4",
+            "temp"
+        ],
+        "packets": [
+            "GRTU1000Data"
+        ]
+    },
+    "HOS3000CH4": {
+        "fields": [
+            "addr",
+            "gas_strength"
+        ],
+        "packets": [
+            "Uart485ForHOS3000CH4SampleData"
+        ]
+    },
+    "DistanceData": {
+        "fields": [
+            "distance",
+            "addr",
+            "measure_mode",
+            "fan_work_mode",
+            "sensor_status",
+            "baudrate"
+        ],
+        "extend_fields": {
+            "angle": "double"
+        },
+        "packets": [
+            "Uart485ForHOS910030SampleData",
+            "DistanceHOS910030I0RSUC",
+            "DistanceHOS910030I1RSUC",
+            "DistanceHOS910030I2RSUC",
+            "DistanceHOS9120I0RSUC",
+            "DistanceHOS9120I1RSUC",
+            "DistanceBGK4420I",
+            "DistanceMWCJ1",
+            "DistanceYTFD0103",
+            "DistanceYTDG0720",
+            "DistanceSIT1800R",
+            "DistanceNJWSJD02",
+            "DistanceHT71B10",
+            "DistanceHS73N9",
+            "DistanceIGT180C",
+            "DistanceSPRS0F1HT71B10",
+            "DistanceHT71B11I0RSUC"
+        ]
+    },
+    "Uart485ForHFS716Sample": {
+        "fields": [
+            "temperature_or_ressum",
+            "Hz_or_resratio",
+            "channel_unixtime",
+            "channel",
+            "addr",
+            "serial_number",
+            "version"
+        ],
+        "packets": [
+            "Uart485ForHFS716SampleData",
+            "VibraWireResHFS716I0RSUC"
+        ]
+    },
+    "VoltageDataV1": {
+        "fields": [
+            "millivolt",
+            "temp",
+            "voltage"
+        ],
+        "packets": [
+            "VoltageHIS800",
+            "VoltageALUC"
+        ]
+    },
+    "TopInfoNodeData": {
+        "fields": [
+            "SQI",
+            "parent",
+            "battery_voltage",
+            "product_type",
+            "reboot_count",
+            "rf_channel",
+            "sampling",
+            "version",
+            "state",
+            "incli_marked",
+            "synced",
+            "worktime",
+            "is_on",
+            "hour",
+            "minute",
+            "second",
+            "interval",
+            "number",
+            "node_type",
+            "last_reset_type",
+            "rf_power",
+            "top_state",
+            "is_sync_error_t",
+            "sensor_init",
+            "send_delay",
+            "tx_mode"
+        ],
+        "extend_fields": {
+            "battery_num": "int32",
+            "battery_type": "int32",
+            "load_voltage": "double",
+            "rsrp": "int32",
+            "rsrq": "int32",
+            "rssi": "int32",
+            "snr": "int32",
+            "tx_pwr": "int32",
+            "csq": "int32",
+            "gatt_time": "uint32"
+        },
+        "packets": [
+            "TopInfoSensorNode",
+            "TopInfoTransNode",
+            "NbTopInfoNodeData"
+        ]
+    },
+    "PowerStateNodeData": {
+        "fields": [
+            "battery_num",
+            "battery_type",
+            "cha_state",
+            "chr_state",
+            "temp",
+            "battery_voltage",
+            "current",
+            "residual_electricity",
+            "is_charging",
+            "csq"
+        ],
+        "packets": [
+            "PowerStateSensorNode",
+            "PowerStateTransNode"
+        ]
+    },
+    "SerialNumber": {
+        "fields": [
+            "serial_number"
+        ],
+        "packets": [
+            "SerialNumber",
+            "SerialNumberTransNode"
+        ]
+    },
+    "SoftVersion": {
+        "fields": [
+            "version"
+        ],
+        "packets": [
+            "SoftVersion",
+            "SoftwareVersionTransNode"
+        ]
+    },
+    "ClockTaskTimeInfoSensorNode": {
+        "fields": [
+            "clock1_is_on",
+            "clock1_hour",
+            "clock1_minute",
+            "clock1_second",
+            "clock1_interval",
+            "clock1_number",
+            "clock2_is_on",
+            "clock2_hour",
+            "clock2_minute",
+            "clock2_second",
+            "clock2_interval",
+            "clock2_number",
+            "clock0_is_on",
+            "clock0_hour",
+            "clock0_minute",
+            "clock0_second",
+            "clock0_interval",
+            "clock0_number"
+        ],
+        "extend_fields": {
+            "send_interval": "uint32"
+        },
+        "packets": [
+            "ClockTaskTimeInfoSensorNode",
+            "SchedulersTimeInfoSensorNode"
+        ]
+    },
+    "HoldRegisterData1HCF700": {
+        "fields": [
+            "addr",
+            "init_value",
+            "density"
+        ],
+        "packets": [
+            "HoldRegisterData1HCF700"
+        ]
+    },
+    "HoldRegisterData2HCF700": {
+        "fields": [
+            "addr",
+            "g_value",
+            "full_sensor_value",
+            "full_adc_value",
+            "zero_adc_value"
+        ],
+        "packets": [
+            "HoldRegisterData2HCF700"
+        ]
+    },
+    "InputRegisterDataHCF700": {
+        "fields": [
+            "version",
+            "worktime",
+            "addr",
+            "relative_value",
+            "raw_value",
+            "temp",
+            "adc_value"
+        ],
+        "packets": [
+            "InputRegisterDataHCF700"
+        ]
+    },
+    "GRTU1000Status": {
+        "fields": [
+            "longdata",
+            "latidata",
+            "latitude",
+            "longitude"
+        ],
+        "packets": [
+            "GRTU1000Status"
+        ]
+    },
+    "WeightingData": {
+        "fields": null,
+        "extend_fields": {
+            "LaneID": "string",
+            "LaneIDFlyOver": "string",
+            "Speed": "double",
+            "Plate": "string",
+            "VehType": "string",
+            "GrossLoad": "double",
+            "error": "string",
+            "AL": "string",
+            "GV": "string",
+            "OS": "string",
+            "ImageFile": "string",
+            "AxleLoad1": "double",
+            "AxleLoad2": "double",
+            "AxleLoad3": "double",
+            "AxleLoad4": "double",
+            "AxleLoad5": "double",
+            "AxleLoad6": "double",
+            "AxleLoad7": "double",
+            "AxleLoad8": "double",
+            "AxleSpacing1": "double",
+            "AxleSpacing2": "double",
+            "AxleSpacing3": "double",
+            "AxleSpacing4": "double",
+            "AxleSpacing5": "double",
+            "AxleSpacing6": "double",
+            "AxleSpacing7": "double",
+            "carLength": "double",
+            "cross_lane": "string",
+            "reverse": "string",
+            "axle_count": "uint32",
+            "chassis_freq": "double",
+            "temp": "double",
+            "devTypeName": "string"
+        },
+        "packets": [
+            "BJCC-ITS"
+        ]
+    },
+    "CalibrationConfigHCF2000": {
+        "fields": [
+            "number",
+            "temp",
+            "offset"
+        ],
+        "packets": [
+            "CalibrationConfigHCF2000"
+        ]
+    },
+    "InitIncliInfo": {
+        "fields": [
+            "incli_marked",
+            "main_direction",
+            "origin_x",
+            "origin_y",
+            "origin_z"
+        ],
+        "extend_fields": {
+            "origin_incli_x": "double",
+            "origin_incli_y": "double",
+            "origin_incli_z": "double",
+            "chip_temp": "double",
+            "is_temp_cali": "uint32"
+        },
+        "packets": [
+            "IncliCaliInfoHCF200",
+            "IncliCaliInfoHCF4000",
+            "IncliCaliInfoSS42F1",
+            "IncliCaliInfoSS42N1",
+            "IncliCaliInfo"
+        ]
+    },
+    "InitIncliHCF200Done": {
+        "fields": [
+            "error_t"
+        ],
+        "packets": [
+            "InitIncliHCF200Done"
+        ]
+    },
+    "ClockTaskSampleInfoAndTriggerSampleInfo": {
+        "fields": [
+            "odr",
+            "range",
+            "axis",
+            "period",
+            "def_sample_type",
+            "main_direction",
+            "incli_marked",
+            "odr_s",
+            "range_s",
+            "axis_s",
+            "period_s",
+            "def_sample_type_s",
+            "main_direction_s",
+            "incli_marked_s",
+            "is_set_trigger",
+            "monitor_odr",
+            "monitor_axis",
+            "trigger_odr",
+            "trigger_axis",
+            "trigger_range",
+            "trigger_sensitivity",
+            "trigger_threshold",
+            "trigger_period"
+        ],
+        "packets": [
+            "ClockTaskSampleInfoAndTriggerSampleInfoHCF300",
+            "ClockTaskSampleInfoAndTriggerSampleInfoHCF400",
+            "ClockTaskSampleInfoAndTriggerSampleInfoHCF4000"
+        ]
+    },
+    "StdNodeHGR100B2": {
+        "fields": [
+            "reference_node"
+        ],
+        "packets": [
+            "StdNodeHGR100B2"
+        ]
+    },
+    "ExistNodesHGR100B2": {
+        "fields": [
+            "node_bit"
+        ],
+        "packets": [
+            "ExistNodes1HGR100B2",
+            "ExistNodes2HGR100B2"
+        ]
+    },
+    "ClockTaskSampleInfo": {
+        "fields": [
+            "odr",
+            "range",
+            "axis",
+            "odr_s",
+            "range_s",
+            "axis_s",
+            "channel_bit",
+            "channel_bit_s",
+            "sample_pattern",
+            "sample_pattern_s",
+            "main_direction",
+            "period",
+            "period_s",
+            "local_channel_bit",
+            "ext_channel_bit",
+            "local_channel_bit_s",
+            "ext_channel_bit_s",
+            "is_continuous",
+            "is_out_power",
+            "is_factory_init",
+            "is_user_init",
+            "is_continuous_s",
+            "is_factory_init_s",
+            "is_user_init_s"
+        ],
+        "ADC_gain": {
+            "gain_1x": 0,
+            "gain_2x": 1,
+            "gain_4x": 2,
+            "gain_8x": 3,
+            "gain_16x": 4,
+            "gain_32x": 5,
+            "gain_64x": 6,
+            "gain_128x": 7
+        },
+        "extend_fields": {
+            "odr_v": "string",
+            "range_v": "string",
+            "axis_v": "string",
+            "period_v": "int32",
+            "running_mode": "int32",
+            "running_mode_s": "int32",
+            "def": "int32",
+            "def_s": "int32",
+            "def_v": "int32",
+            "adc_gain": "ADC_gain",
+            "analog_gain": "double"
+        },
+        "packets": [
+            "ClockTaskSampleInfoHFS200",
+            "ClockTaskSampleInfoHFS200V1",
+            "ClockTaskSampleInfoHFS316",
+            "ClockTaskSampleInfoHCF3000",
+            "ClockTaskSampleInfoHCF100",
+            "ClockTaskSampleInfoHCF200",
+            "ClockTaskSampleInfoHGR100B2",
+            "ClockTaskSampleInfoHGL400B2",
+            "ClockTaskSampleInfoHFS400",
+            "ClockTaskSampleInfoHFS500",
+            "ClockTaskSampleInfoHFS530",
+            "ClockTaskSampleInfoHIS100",
+            "ClockTaskSampleInfoHIS400",
+            "ClockTaskSampleInfoSS40N1",
+            "ClockTaskSampleInfoSS40N2",
+            "ClockTaskSampleInfoSCZ0F1",
+            "ClockTaskSampleInfoSCZ0N1",
+            "ClockTaskSampleInfoSS44F1",
+            "ClockTaskSampleInfoSCD1F1",
+            "SchedulersSampleInfo"
+        ]
+    },
+    "ChannelInfoHFS316": {
+        "fields": [
+            "max_channel_num",
+            "channel_info"
+        ],
+        "packets": [
+            "ChannelInfoHFS316"
+        ]
+    },
+    "ChannelInfoHIS100": {
+        "fields": [
+            "channel1_config",
+            "channel2_config",
+            "channel3_config",
+            "channel4_config",
+            "voltage"
+        ],
+        "packets": [
+            "ChannelInfoHIS100"
+        ]
+    },
+    "ChannelFreqInfo": {
+        "fields": [
+            "channel_freq"
+        ],
+        "packets": [
+            "ChannelFreqHFS500",
+            "ChannelFreqHFS530"
+        ]
+    },
+    "CaliInfoHIS100": {
+        "fields": [
+            "channel_bit",
+            "number",
+            "calibration_num",
+            "sensor_data",
+            "standard_data"
+        ],
+        "packets": [
+            "CaliInfoHIS100"
+        ]
+    },
+    "Uart485AutoSampleFlag": {
+        "fields": [
+            "auto_sample_interval",
+            "disconnect_interval",
+            "sample_collect_interval",
+            "auto_sample_flag",
+            "baudrate"
+        ],
+        "packets": [
+            "Uart485AutoSampleFlag"
+        ]
+    },
+    "Uart485CmdList": {
+        "fields": [
+            "sub_type",
+            "main_type",
+            "product_type",
+            "sample_data_length",
+            "sample_instruct",
+            "collect_data_length",
+            "collect_instruct"
+        ],
+        "packets": [
+            "Uart485CmdList"
+        ]
+    },
+    "Uart485TypeList": {
+        "fields": [
+            "addr",
+            "main_type",
+            "sub_type",
+            "product_type"
+        ],
+        "packets": [
+            "Uart485TypeList"
+        ]
+    },
+    "ShapeArrayHCF1100": {
+        "fields": [
+            "addr",
+            "acc_x",
+            "acc_y",
+            "acc_z",
+            "acc_temp",
+            "magnetic_x",
+            "magnetic_y",
+            "magnetic_z",
+            "length",
+            "serial_number",
+            "pitch",
+            "roll",
+            "yaw",
+            "pitch_init",
+            "roll_init",
+            "yaw_init",
+            "coordinate_x",
+            "coordinate_y",
+            "coordinate_z",
+            "coordinate_init_x",
+            "coordinate_init_y",
+            "coordinate_init_z"
+        ],
+        "extend_fields": {
+            "x": "double",
+            "y": "double",
+            "z": "double"
+        },
+        "packets": [
+            "ShapeArrayHCF1100",
+            "ShapeArrayHCF1100I0RSUC"
+        ]
+    },
+    "NodeInfoRSUC": {
+        "fields": [
+            "addr",
+            "sample_ins_type",
+            "product_ins_type",
+            "product_type",
+            "node_type"
+        ],
+        "packets": [
+            "NodeInfoRSUC"
+        ]
+    },
+    "InstructionInfoRSUC": {
+        "fields": [
+            "product_type",
+            "product_ins_type",
+            "product_ins_type_index",
+            "ins_buf"
+        ],
+        "packets": [
+            "InstructionInfoRSUC"
+        ]
+    },
+    "TransparentDataRSUC": {
+        "fields": [
+            "product_type",
+            "product_ins_type",
+            "data_len",
+            "data"
+        ],
+        "packets": [
+            "TransparentDataRSUC"
+        ]
+    },
+    "ChildNodeTransNode": {
+        "fields": [
+            "is_snoop",
+            "total",
+            "snoop_total",
+            "sub_total",
+            "node_in_network"
+        ],
+        "packets": [
+            "ChildNodeTransNode"
+        ]
+    },
+    "NodeWhiteListEntryTransNode": {
+        "fields": [
+            "serial_number"
+        ],
+        "packets": [
+            "NodeWhiteListEntryTransNode"
+        ]
+    },
+    "CurrentDataV1": {
+        "fields": [
+            "current"
+        ],
+        "packets": [
+            "CurrentALUC"
+        ]
+    },
+    "SampleParameterDataRSUC": {
+        "fields": [
+            "product_pow_sup_mode",
+            "voltage",
+            "running_mode",
+            "analog_sample_type",
+            "odr",
+            "period",
+            "pow_on_interval",
+            "retrieve_interval"
+        ],
+        "packets": [
+            "SampleParameterDataRSUC"
+        ]
+    },
+    "SensorConfigInfoHIS400": {
+        "fields": [
+            "k_value",
+            "s_value",
+            "value_0"
+        ],
+        "packets": [
+            "SensorConfigInfoHIS400"
+        ]
+    },
+    "VirtualModuleNAODU": {
+        "fields": null,
+        "extend_fields": {
+            "val": "double",
+            "kx": "repeated double",
+            "kk": "repeated double"
+        },
+        "packets": [
+            "IncliHCF200",
+            "IncliHCF2000",
+            "IncliHCF410"
+        ]
+    },
+    "VirtualModuleHCF700_485_Naodu": {
+        "fields": null,
+        "extend_fields": {
+            "val": "double"
+        },
+        "packets": [
+            "HCF700_485",
+            "PressHCF710I0RSUC",
+            "SettlementContDataWL5",
+            "StressDataDH1205",
+            "DistanceContData",
+            "HT70210"
+        ]
+    },
+    "VirtualModuleHCF1100": {
+        "fields": null,
+        "extend_fields": {
+            "group": "int32",
+            "x1_0": "repeated double",
+            "x2_0": "repeated double",
+            "z_0": "repeated double",
+            "x1_1": "repeated double",
+            "x2_1": "repeated double",
+            "z_1": "repeated double"
+        },
+        "packets": [
+            "Uart485ForHCF1100SampleData"
+        ]
+    },
+    "DistanceHOS910030I1RSUCCont": {
+        "fields": [
+            "data",
+            "addr",
+            "sample_interval",
+            "microsecond"
+        ],
+        "packets": [
+            "DistanceHOS910030I1RSUCCont"
+        ]
+    },
+    "AnalogSampleDataCont": {
+        "fields": [
+            "data",
+            "sample_interval",
+            "microsecond"
+        ],
+        "packets": [
+            "VoltageALUCCont",
+            "CurrentALUCCont"
+        ]
+    },
+    "TopInfoRSUC": {
+        "fields": [
+            "version",
+            "serial_number"
+        ],
+        "packets": [
+            "TopInfoHCF710RSUC"
+        ]
+    },
+    "InclinationRSUC": {
+        "fields": [
+            "angle_x",
+            "angle_y",
+            "angle_z"
+        ],
+        "packets": [
+            "IncliHCF2100I0RSUC"
+        ]
+    },
+    "DistanceRSUCCont": {
+        "fields": [
+            "data",
+            "addr",
+            "sample_interval",
+            "microsecond"
+        ],
+        "packets": [
+            "DistanceHOS9120I1RSUCCont"
+        ],
+        "extend_packets": [
+            "DistanceHOS9120CRTXCont"
+        ]
+    },
+    "SampleMode": {
+        "fields": [
+            "sample_mode"
+        ],
+        "packets": [
+            "SampleMode"
+        ]
+    },
+    "TriggerSampleConfigInfo": {
+        "fields": [
+            "send_mode",
+            "is_trigger_set",
+            "is_triggered",
+            "wind_threshold",
+            "wind_debounce",
+            "incli_threshold"
+        ],
+        "extend_fields": {
+            "is_incli_triggered": "uint32",
+            "is_cable_triggered": "uint32",
+            "is_vibra_triggered": "uint32",
+            "incli_debounce": "uint32",
+            "cable_threshold": "uint32",
+            "vibra_debounce": "uint32",
+            "vibra_threshold_x": "uint32",
+            "vibra_threshold_y": "uint32",
+            "vibra_threshold_z": "uint32",
+            "is_on_trigger": "uint32",
+            "threshold": "double",
+            "listen_interval": "uint32",
+            "alarm_num": "uint32",
+            "alarm_interval": "uint32",
+            "send_interval": "uint32",
+            "is_on_x": "uint32",
+            "is_on_y": "uint32",
+            "is_on_absolute": "uint32",
+            "threshold_x": "double",
+            "threshold_y": "double",
+            "threshold_absolute": "double"
+        },
+        "packets": [
+            "TriggerConfigHCF910",
+            "TriggerConfigHCF4000",
+            "TriggerConfigSS44F1",
+            "IncliTriggerConfigInfo"
+        ]
+    },
+    "TriggerEvent": {
+        "fields": [
+            "sample_type"
+        ],
+        "extend_fields": {
+            "filename": "string",
+            "level": "int32",
+            "alert_value": "double"
+        },
+        "packets": [
+            "TriggerEvent"
+        ]
+    },
+    "IncliContData": {
+        "fields": null,
+        "extend_fields": {
+            "angle": "double",
+            "sample_interval": "double",
+            "angle_x": "double",
+            "angle_y": "double",
+            "angle_z": "double"
+        },
+        "packets": [
+            "IncliLCF100",
+            "IncliMWQJ01",
+            "IncliTI1",
+            "IncliHT44310",
+            "IncliTI1zenoptics310",
+            "IncliTI1zenoptics320"
+        ]
+    },
+    "TempHumiContData": {
+        "fields": null,
+        "extend_fields": {
+            "temp": "double",
+            "humi": "double",
+            "air_pressure": "double",
+            "sample_interval": "double"
+        },
+        "packets": [
+            "TempHumiNH121WSYR",
+            "TempFBG4000T",
+            "TempFBG4700S",
+            "TempFGB5420",
+            "HumiMWWS1",
+            "Temp18B20",
+            "TempZenoptics610",
+            "TempHumiZenoptics630",
+            "TempGT1",
+            "TempHumiTH1",
+            "TempHT61310"
+        ]
+    },
+    "DistanceContData": {
+        "fields": null,
+        "extend_fields": {
+            "distance": "double",
+            "sample_interval": "double",
+            "distance_x": "double",
+            "distance_y": "double"
+        },
+        "packets": [
+            "Displacement5G107",
+            "CrackFBG4420T",
+            "Displacement5G204",
+            "DistanceLVDT20",
+            "DistanceMWND50",
+            "DistanceFBG5100",
+            "DistanceGTH10",
+            "DisplacementZenoptics530",
+            "CrackZenoptics510",
+            "DistanceMWND135",
+            "DistanceDS5",
+            "DistanceNJWSLX1",
+            "DistanceWYSSA21000",
+            "DistanceHT72310",
+            "DistanceHS70E10",
+            "DistanceSMTM",
+            "DistanceHT71210"
+        ]
+    },
+    "StrainContData": {
+        "fields": null,
+        "extend_fields": {
+            "strain": "double",
+            "sample_interval": "double"
+        },
+        "packets": [
+            "StrainFBG4000T"
+        ]
+    },
+    "SettlementContData": {
+        "fields": null,
+        "extend_fields": {
+            "deflection": "double",
+            "sample_interval": "double"
+        },
+        "packets": [
+            "DeflectionFBG550",
+            "DeflectionFBG5650",
+            "DeflectionYC11",
+            "DeflectionWL5"
+        ]
+    },
+    "AnemometerContData": {
+        "fields": null,
+        "extend_fields": {
+            "wind_speed": "double",
+            "wind_direction": "double",
+            "wind_speed_U": "double",
+            "wind_speed_V": "double",
+            "wind_speed_W": "double",
+            "virtual_temp": "double",
+            "diagnose_value": "double",
+            "sample_interval": "double",
+            "temp": "double",
+            "sound_velocity": "double"
+        },
+        "packets": [
+            "AnemometerNHFS47BR",
+            "AnemometerGillWindMasterPro",
+            "AnemometerHT91210",
+            "AnemometerYOUNG01",
+            "AnemometerYOUNG81000"
+        ]
+    },
+    "VirtualModuleSmoothSettlement": {
+        "fields": null,
+        "extend_fields": {
+            "new_value": "double",
+            "t_value": "double"
+        },
+        "packets": [
+            "PressHCF700"
+        ]
+    },
+    "StrainData": {
+        "fields": null,
+        "extend_fields": {
+            "strain": "double"
+        },
+        "packets": [
+            "StrainBGK4000"
+        ]
+    },
+    "StressGapData": {
+        "fields": null,
+        "extend_fields": {
+            "stress": "double"
+        },
+        "packets": [
+            "StressST2"
+        ]
+    },
+    "GPSContData": {
+        "fields": null,
+        "extend_fields": {
+            "x": "double",
+            "y": "double",
+            "z": "double",
+            "raw_x": "double",
+            "raw_y": "double",
+            "raw_z": "double"
+        },
+        "packets": [
+            "GPSDataGR30",
+            "GPSDataH3",
+            "GPSDataSIT1800",
+            "GPSDataHOS7110H3",
+            "GPSDataHS71F",
+            "GPSDataZDYC9X02",
+            "GPSDataTB5700"
+        ]
+    },
+    "OtaRequirePiece": {
+        "fields": null,
+        "extend_fields": {
+            "filename": "string",
+            "piece_num": "int32",
+            "piece_size": "int32"
+        },
+        "packets": [
+            "OtaRequirePiece"
+        ]
+    },
+    "OtaAddFileState": {
+        "fields": null,
+        "AFSRes": {
+            "STATE_RECOVERY": 0,
+            "STATE_APPEND": 1,
+            "STATE_ALREADY": 2
+        },
+        "extend_fields": {
+            "filename": "string",
+            "res": "AFSRes"
+        },
+        "packets": [
+            "OtaAddFileState"
+        ]
+    },
+    "OtaTransFileState": {
+        "fields": null,
+        "TFSRes": {
+            "STATE_SUC": 0,
+            "STATE_ALLCOM": 1,
+            "STATE_ACTIVE": 2,
+            "STATE_REACTIVE": 3,
+            "STATE_RET": 4,
+            "STATE_TERM": 5,
+            "STATE_ABANDON": 6,
+            "STATE_LOADADBS": 7
+        },
+        "extend_fields": {
+            "filename": "string",
+            "res": "TFSRes",
+            "nretrans": "uint32"
+        },
+        "packets": [
+            "OtaTransFileState"
+        ]
+    },
+    "OtaLoadFileState": {
+        "fields": null,
+        "LFSRes": {
+            "STATE_SUC": 0,
+            "STATE_FAIL": 1
+        },
+        "extend_fields": {
+            "filename": "string",
+            "res": "LFSRes"
+        },
+        "packets": [
+            "OtaLoadFileState"
+        ]
+    },
+    "OtaCancelFileState": {
+        "fields": null,
+        "CFSRes": {
+            "STATE_SUC": 0,
+            "STATE_NOEXIST": 1
+        },
+        "extend_fields": {
+            "filename": "string",
+            "res": "CFSRes"
+        },
+        "packets": [
+            "OtaCancelFileState"
+        ]
+    },
+    "PeriodicUp": {
+        "fields": null,
+        "extend_fields": {
+            "ccid": "string",
+            "imsi": "string",
+            "imei": "string"
+        },
+        "packets": [
+            "PeriodicUp"
+        ]
+    },
+    "SystemBootInfo": {
+        "fields": null,
+        "SBIRes": {
+            "SYS_POWERUP": 0,
+            "SYS_BROWNOUT": 1,
+            "SYS_WATCHDOG": 2,
+            "SYS_ADBS_ACT": 3,
+            "BUSI_NORMAL": 10,
+            "BUSI_SAM_TIMEOUT": 11,
+            "BUSI_BROWNOUT": 12
+        },
+        "extend_fields": {
+            "version": "uint32",
+            "boot_src": "SBIRes"
+        },
+        "packets": [
+            "SystemBootInfo"
+        ]
+    },
+    "ServerAddressInfo": {
+        "fields": null,
+        "extend_fields": {
+            "server_address": "repeated string",
+            "signal_quality": "uint32",
+            "sim_imsi": "string",
+            "sim_imei": "string",
+            "sim_iccid": "string"
+        },
+        "packets": [
+            "ServerAddressInfo"
+        ]
+    },
+    "UpNodeDataCRTX": {
+        "fields": null,
+        "extend_fields": {
+            "addr": "uint32",
+            "pro_type": "uint32",
+            "node_type": "uint32",
+            "node_group": "uint32"
+        },
+        "packets": [
+            "NodeInfoCRTX"
+        ]
+    },
+    "InstructionInfoCRTX": {
+        "fields": null,
+        "extend_fields": {
+            "ins_version": "uint32",
+            "ins_numbers": "uint32"
+        },
+        "packets": [
+            "InstructionInfoCRTX"
+        ]
+    },
+    "NodeListCRTX": {
+        "fields": null,
+        "extend_fields": {
+            "addr_list": "repeated uint32"
+        },
+        "packets": [
+            "NodeListCRTX"
+        ]
+    },
+    "ErrorCodeCRTX": {
+        "fields": null,
+        "extend_fields": {
+            "err_code": "uint32",
+            "err_describe": "string"
+        },
+        "packets": [
+            "ErrorCodeCRTX"
+        ]
+    },
+    "PressData": {
+        "fields": [
+            "pressure"
+        ],
+        "packets": [
+            "PressHT12210I0RSUC"
+        ]
+    },
+    "VibraWireInfo": {
+        "fields": null,
+        "extend_fields": {
+            "ch0_midfreq": "uint32",
+            "ch1_midfreq": "uint32",
+            "ch2_midfreq": "uint32",
+            "ch3_midfreq": "uint32",
+            "ch4_midfreq": "uint32",
+            "ch5_midfreq": "uint32",
+            "ch6_midfreq": "uint32",
+            "ch7_midfreq": "uint32",
+            "ch8_midfreq": "uint32",
+            "ch9_midfreq": "uint32",
+            "ch10_midfreq": "uint32",
+            "ch11_midfreq": "uint32",
+            "ch12_midfreq": "uint32",
+            "ch13_midfreq": "uint32",
+            "ch14_midfreq": "uint32",
+            "ch15_midfreq": "uint32",
+            "ch16_midfreq": "uint32"
+        },
+        "packets": [
+            "VibraWireInfoSCZ0F1",
+            "VibraWireInfoSCZ0N1"
+        ]
+    },
+    "MoistureData": {
+        "fields": null,
+        "extend_fields": {
+            "moisture": "double"
+        },
+        "packets": [
+            "MoistureHT65B10"
+        ]
+    },
+    "AlgorithmConfigInfo": {
+        "fields": null,
+        "extend_fields": {
+            "kn_0": "repeated double",
+            "kn_1": "repeated double",
+            "kn_2": "repeated double",
+            "peaks": "repeated uint32",
+            "pkt_num": "uint32",
+            "seqno": "uint32",
+            "temp_grid": "int32",
+            "x_coef": "repeated double",
+            "y_coef": "repeated double"
+        },
+        "packets": [
+            "AlgorithmConfigInfoSS40N2",
+            "TempCaliInfo"
+        ]
+    },
+    "PrecipitationData": {
+        "fields": null,
+        "extend_fields": {
+            "precipitation": "double",
+            "instantaneousPrecipitation": "double",
+            "yesterday_rainfall_in_1tenth": "double",
+            "total_rainfall_in_1tenth": "double",
+            "hourly_rainfall_in_1tenth": "double",
+            "lasthour_rainfall_in_1tenth": "double",
+            "max_rainfall_24h_in_1tenth": "double",
+            "max_rainfall_24h_slot_start_in_hour": "uint32",
+            "max_rainfall_24h_slot_end_in_hour": "uint32",
+            "min_rainfall_24h_in_1tenth": "double",
+            "min_rainfall_24h_slot_start_in_hour": "uint32",
+            "min_rainfall_24h_slot_end_in_hour": "uint32"
+        },
+        "packets": [
+            "PrecipitationHT66B20",
+            "PrecipitationSPRS0F1HT66B20",
+            "PrecipitationXP001"
+        ]
+    },
+    "TimeSyncInfo": {
+        "fields": null,
+        "extend_fields": {
+            "is_sync": "uint32",
+            "is_sync_need": "uint32",
+            "sync_interval": "uint32",
+            "sync_timeout_period": "uint32"
+        },
+        "packets": [
+            "TimeSyncInfo"
+        ]
+    },
+    "ErrorMessage": {
+        "fields": null,
+        "extend_fields": {
+            "err_no": "uint32"
+        },
+        "packets": [
+            "ErrorMessage"
+        ]
+    },
+    "InclinometerData": {
+        "fields": null,
+        "extend_fields": {
+            "x": "double",
+            "y": "double"
+        },
+        "packets": [
+            "InclinometerHT21B10"
+        ]
+    },
+    "CablePeaksDataV2": {
+        "fields": [],
+        "extend_fields": {
+            "axis": "string",
+            "freq": "double",
+            "odr": "string",
+            "range": "string",
+            "cable": "double",
+            "point_width": "uint32",
+            "id": "uint32",
+            "f_value": "repeated float",
+            "t_cable": "double",
+            "peaks_res": "repeated uint32",
+            "peaks_cali": "repeated uint32"
+        },
+        "packets": [
+            "CablePeaksSS40N2"
+        ]
+    },
+    "TrafficFlowData": {
+        "fields": null,
+        "extend_fields": {
+            "lane_id": "uint32",
+            "traffic_flow": "uint32",
+            "lane_holdrate": "double",
+            "average_speed": "double",
+            "average_headDistance": "double",
+            "start_time": "uint32",
+            "stop_time": "uint32",
+            "car_typetotal": "uint32",
+            "car_queuelength": "uint32",
+            "head_distance": "int32",
+            "room_rate": "double",
+            "run_state": "string",
+            "lane_name": "string",
+            "scene_id": "uint32",
+            "unknown_type": "uint32",
+            "hatchback_car": "uint32",
+            "saloon": "uint32",
+            "coupe": "uint32",
+            "compact": "uint32",
+            "mini": "uint32",
+            "MPV": "uint32",
+            "SUV": "uint32",
+            "large_bus": "uint32",
+            "medium_bus": "uint32",
+            "van": "uint32",
+            "microvan": "uint32",
+            "HGV": "uint32",
+            "medium_truck": "uint32",
+            "tank_truck": "uint32",
+            "crane": "uint32",
+            "muck_car": "uint32",
+            "buggy": "uint32",
+            "pickup_trunk": "uint32",
+            "micro_trunk": "uint32",
+            "motorcycle": "uint32",
+            "tricycle": "uint32",
+            "SUV_MPV": "uint32",
+            "trailer": "uint32",
+            "large_car": "uint32",
+            "medium_car": "uint32",
+            "super_car": "uint32",
+            "small_car": "uint32"
+        },
+        "packets": [
+            "TrafficFlowDataTDWY"
+        ]
+    },
+    "GPSInfo": {
+        "fields": null,
+        "extend_fields": {
+            "latitude": "double",
+            "longitude": "double"
+        },
+        "packets": [
+            "GPSInfo"
+        ]
+    },
+    "UltrahighFreqData": {
+        "fields": null,
+        "extend_fields": {
+            "data": "repeated float",
+            "freq": "double",
+            "pkt_num": "uint32",
+            "seqno": "uint32",
+            "odr": "string"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VibraSCD1F1"
+        ]
+    },
+    "TotalStationData": {
+        "fields": null,
+        "extend_fields": {
+            "x": "double",
+            "y": "double",
+            "z": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "TotalStationDataTS16"
+        ]
+    },
+    "VirtualModuleVibraWire": {
+        "fields": null,
+        "extend_fields": {
+            "freq": "double",
+            "temp": "double",
+            "db": "int32",
+            "data": "double",
+            "voltage": "double",
+            "sample_interval": "double",
+            "addr": "int32"
+        },
+        "packets": [
+            "HOS_4000"
+        ]
+    },
+    "VirtuaVibraCableData": {
+        "fields": null,
+        "extend_fields": {
+            "freq_point": "repeated double",
+            "tension": "double",
+            "damping_ratio": "repeated double",
+            "rms": "double",
+            "features": "repeated double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VibraHCF4000"
+        ]
+    },
+    "PressContData": {
+        "fields": null,
+        "extend_fields": {
+            "pressure": "double",
+            "sample_interval": "double"
+        },
+        "packets": [
+            "PressZenoptics280",
+            "PressHT70210"
+        ]
+    },
+    "VirtualModalAnalysisData": {
+        "fields": null,
+        "extend_fields": {
+            "freq": "double",
+            "damp": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "ModalAnalysisData"
+        ]
+    },
+    "VirtualCorrelationAnalysisData": {
+        "fields": null,
+        "extend_fields": {
+            "correlationCoefficient": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "CorrelationAnalysisData"
+        ]
+    },
+    "AcousticEmissionSensor": {
+        "fields": null,
+        "extend_fields": {
+            "amp": "double",
+            "power": "double",
+            "asl": "double",
+            "rms": "double",
+            "ringing": "double",
+            "rising": "double",
+            "risingtime": "double",
+            "duringtime": "double",
+            "arrivingsec": "double",
+            "arrivingns": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "RAEMAcousticEmissionSensor"
+        ]
+    },
+    "SPRSSubDeviceData": {
+        "fields": null,
+        "extend_fields": {
+            "msg_type_id": "string",
+            "device_addr": "int32",
+            "msg_payload": "bytes"
+        },
+        "packets": [
+            "SPRSSubDeviceData"
+        ]
+    },
+    "SPRSBspInfo": {
+        "fields": null,
+        "Baud": {
+            "bps4800": 0,
+            "bps9600": 1,
+            "bps38400": 2,
+            "bps57600": 3,
+            "bps115200": 4
+        },
+        "PowerStatus": {
+            "POWER_ON": 0,
+            "POWER_OFF": 1,
+            "POWER_AUTO": 2
+        },
+        "extend_fields": {
+            "baud": "Baud",
+            "power_status": "PowerStatus"
+        },
+        "packets": [
+            "SPRSBspInfo"
+        ]
+    },
+    "SPRSInsBriefInfo": {
+        "fields": null,
+        "extend_fields": {
+            "ins_cfg_id": "string"
+        },
+        "packets": [
+            "SPRSInsBriefInfo"
+        ]
+    },
+    "SPRSClockTaskCfg": {
+        "fields": null,
+        "extend_fields": {
+            "clock_num": "int32",
+            "ins_list_id": "string",
+            "device_list": "repeated int32"
+        },
+        "packets": null,
+        "extend_packets": [
+            "SPRSClockTaskCfg"
+        ]
+    },
+    "SPRSClockTaskInfo": {
+        "fields": null,
+        "extend_fields": {
+            "cfg_list": "repeated SPRSClockTaskCfg"
+        },
+        "packets": null,
+        "extend_packets": [
+            "SPRSClockTaskInfo"
+        ]
+    },
+    "ThresholdCfg": {
+        "fields": null,
+        "TriggerType": {
+            "UPPER": 0,
+            "LOWER": 1
+        },
+        "extend_fields": {
+            "msg_type_id": "string",
+            "field_id": "int32",
+            "threshold": "double",
+            "trigger_type": "TriggerType"
+        },
+        "packets": null,
+        "extend_packets": [
+            "ThresholdCfg"
+        ]
+    },
+    "SPRSTriggerCfg": {
+        "fields": null,
+        "extend_fields": {
+            "cfg_list": "repeated ThresholdCfg"
+        },
+        "packets": null,
+        "extend_packets": [
+            "SPRSTriggerCfg"
+        ]
+    },
+    "WeightingDataNew": {
+        "fields": null,
+        "extend_fields": {
+            "LaneID": "string",
+            "Speed": "double",
+            "GrossLoad": "double",
+            "AxleCount": "double",
+            "AxleLoad1": "double",
+            "AxleLoad2": "double",
+            "AxleLoad3": "double",
+            "AxleLoad4": "double",
+            "AxleLoad5": "double",
+            "AxleLoad6": "double",
+            "AxleLoad7": "double",
+            "AxleLoad8": "double",
+            "AxleSpacing1": "double",
+            "AxleSpacing2": "double",
+            "AxleSpacing3": "double",
+            "AxleSpacing4": "double",
+            "AxleSpacing5": "double",
+            "AxleSpacing6": "double",
+            "AxleSpacing7": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "CZYB-SY-A"
+        ]
+    },
+    "VirtualWindSpeedDirectionData": {
+        "fields": null,
+        "extend_fields": {
+            "wind_speed": "double",
+            "wind_direction": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "virtualiWindSpeedDirectionData"
+        ]
+    },
+    "VibraWireParaInfo": {
+        "fields": null,
+        "extend_fields": {
+            "ch_num": "int32",
+            "ch_k": "double",
+            "ch_F0": "double",
+            "ch_b": "double",
+            "ch_T0": "double",
+            "ch_Q": "double",
+            "ch_thres": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VibraWireParaInfo"
+        ]
+    },
+    "SensorInsInfo": {
+        "fields": null,
+        "extend_fields": {
+            "sensor_ins_list": "repeated string"
+        },
+        "packets": null,
+        "extend_packets": [
+            "SensorInsInfo"
+        ]
+    },
+    "SensorMsgInfo": {
+        "fields": null,
+        "extend_fields": {
+            "sensor_msg_list": "repeated string"
+        },
+        "packets": null,
+        "extend_packets": [
+            "SensorMsgInfo"
+        ]
+    },
+    "WeatherData": {
+        "fields": null,
+        "PrecipitationType": {
+            "NONE": 0,
+            "UNKNOWN": 40,
+            "RAINING": 60,
+            "SNOWING": 70
+        },
+        "extend_fields": {
+            "air_density": "double",
+            "specific_enthalpy": "double",
+            "relative_humidity": "double",
+            "ambient_temperature": "double",
+            "dewpoint_temperature": "double",
+            "atmospheric_pressure": "double",
+            "wind_speed": "double",
+            "wind_direction": "double",
+            "wind_chill_temperature": "double",
+            "precipitation_intensity": "double",
+            "precipitation_type": "PrecipitationType",
+            "weather_date": "uint32",
+            "weather_text_day": "string",
+            "weather_code_day": "int32",
+            "weather_text_night": "string",
+            "weather_code_night": "int32",
+            "temperature_high": "double",
+            "temperature_low": "double",
+            "precipitation_probability": "double",
+            "wind_direction_text": "string",
+            "wind_scale": "int32",
+            "precipitation_in_day": "double"
+        },
+        "packets": [
+            "WeatherStationXP001",
+            "WeatherStationXZ001"
+        ]
+    },
+    "RoadSurfaceData": {
+        "fields": null,
+        "SurfaceCondition": {
+            "DRY": 0,
+            "DAMP": 1,
+            "MOIST": 2,
+            "DAMP_SALT": 3,
+            "MOIST_SALT": 4,
+            "SEEPER": 5,
+            "SNOW": 10,
+            "FROST": 11,
+            "WATER_ICE": 12,
+            "FROZEN": 20
+        },
+        "extend_fields": {
+            "friction": "double",
+            "temperature": "double",
+            "water_film_height": "double",
+            "condition": "SurfaceCondition"
+        },
+        "packets": [
+            "RoadSurfaceXP001"
+        ]
+    },
+    "DurabilityData": {
+        "fields": null,
+        "extend_fields": {
+            "voltage": "double",
+            "current": "double",
+            "resistance": "double",
+            "temperature": "double"
+        },
+        "packets": [
+            "SensortecAL01",
+            "SensortecER01"
+        ]
+    },
+    "VirtualLastRainPrecipitation": {
+        "fields": null,
+        "extend_fields": {
+            "unix_time_begin": "uint32",
+            "unix_time_end": "uint32",
+            "total_precipitation_in_mm": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VirtualLastRainPrecipitation"
+        ]
+    },
+    "VirtualTanAngle": {
+        "fields": null,
+        "extend_fields": {
+            "tan_angle": "double",
+            "speed": "double",
+            "speed_inc": "double",
+            "speed_acce": "double",
+            "displacement": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VirtualTanAngle"
+        ]
+    },
+    "VirtualSideslopeKriging": {
+        "fields": null,
+        "extend_fields": {
+            "mux_e": "double",
+            "sigmax_e": "double",
+            "mux_c": "double",
+            "sigmax_c": "double",
+            "mux_phi": "double",
+            "sigmax_phi": "double"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VirtualSideslopeKriging"
+        ]
+    },
+    "VirtualAlertLevel": {
+        "fields": null,
+        "extend_fields": {
+            "level": "uint32"
+        },
+        "packets": null,
+        "extend_packets": [
+            "VirtualAlertLevel"
+        ]
+    },
+    "VirtualWeatherForecast": {
+        "fields": null,
+        "extend_fields": {
+            "precipitation_per_hour_in_mm": "double",
+            "forecast_time_in_sec": "uint32"
+        },
+        "packets": [
+            "VirtualWeatherForecastXP001"
+        ]
+    }
+}

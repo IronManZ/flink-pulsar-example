@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package SensorMessages;
+
+import "SensorDownMessage.proto";
+import "SensorAckMessage.proto";
+
+//golang编译结果路径${go_out}/./SensorMessages/,命名空间：SensorMessages
+option go_package = ".;SensorMessages";
+option java_package = "com.smartbow.proto.SensorMessages";
+
+service SensorDownHandle {
+  rpc SensorDown (SensorDownMessage) returns (SensorAckMessage) {}
+  rpc SensorDownStream (stream SensorDownMessage) returns (stream SensorAckMessage) {}
+}

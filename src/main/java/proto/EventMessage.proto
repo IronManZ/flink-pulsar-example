@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package EventEngine;
+
+import "SensorUpMessage.proto";
+
+//golang结果的编译路径为${go_out}/./EventEngine,命名空间为EventEngine
+option go_package = ".;EventEngine";
+option java_package = "com.smartbow.proto.EventEngine";
+message EventMessage {
+    enum EventType{
+        INVALID = 0;    //无效事件
+        WIND = 1; //风速风向
+        CAR = 2;  //重车过桥
+        EARTHQUAKE = 3; //地震
+        MANUALTRIGGER = 4;  //人工触发
+        SENSORTRIGGER = 5;  //传感网触发
+    }
+    uint64 event_id = 1;    //事件标识，发生的事件的编号
+    string project_name = 2;    //项目
+    EventType event_type = 3;   //事件类型
+    int32 event_rule_id = 4;   //事件规则编号，业务系统配置的规则编号
+    uint32 unix_time = 5;   //发生事件的时间,秒
+    int32 microsecond = 6;  //发生时间的毫秒时间，微妙
+    repeated SensorMessages.SensorUpMessage source = 7;  //触发源的数据
+    map<string, double> params = 8; //提供给无状态服务的参数map
+}

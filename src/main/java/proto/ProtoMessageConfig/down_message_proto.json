@@ -1,0 +1,874 @@
+{
+    "SetRfChannelInfo": {
+        "fields":[
+            "rf_channel"
+        ],
+        "packets":[
+            "SetRfChannelSensorNode",
+            "SetRfChannelTransNode"
+        ]
+    },
+    "GetCablePeaksSampleData": {
+        "fields": [
+            "odr",
+            "range",
+            "axis"
+        ],
+        "packets": [
+            "GetCablePeaksHCF100",
+            "GetCablePeaksHCF4000"
+        ]
+    },
+    "GetVibSampleData": {
+        "fields":[
+            "odr",
+            "range",
+            "axis",
+            "period"
+        ],
+        "extend_fields": {
+            "def": "int32"
+        },
+        "packets":[
+            "GetVibraHCF300",
+            "GetVibraHCF3000",
+            "GetVibraHCF4000",
+            "GetVibraWireHFS400"
+        ],
+        "extend_packets": [
+            "GetVibDataSS40N1",
+            "GetVibDataSS40N2",
+            "GetSampleData"
+        ]
+    },
+    "GetVibraWireSampleData":{
+        "fields":[
+            "channel_bit",
+            "sample_pattern",
+            "local_channel_bit",
+            "ext_channel_bit"
+        ],
+        "packets":[
+            "GetVibraWireHFS200",
+            "GetVibraWireHFS200V1",
+            "GetVibraWireHFS316",
+            "GetVibraWireHFS500V1",
+            "GetVibraWireHFS530"
+        ]
+    },
+    "GetElectricityHIS100":{
+        "fields":[
+            "channel_bit",
+            "odr",
+            "period",
+            "is_continuous",
+            "is_out_power",
+            "is_factory_init",
+            "is_user_init"
+        ],
+        "packets":[
+            "GetElectricityHIS100"
+        ]
+    },
+    "GetStressHIS300":{
+        "fields":[
+            "channel",
+            "odr",
+            "period",
+            "is_continuous"
+        ],
+        "packets":[
+            "GetStressHIS300"
+        ]
+    },
+    "GetStressHIS500":{
+        "fields":[
+            "k_value",
+            "odr",
+            "period"
+        ],
+        "packets":[
+            "GetStressHIS500"
+        ]
+    },
+    "GetPressHGR100B2":{
+        "fields":[
+            "sample_pattern"
+        ],
+        "packets":[
+            "GetPressHGR100B2"
+        ]
+    },
+    "GetAnemometerFC307":{
+        "fields":[
+            "addr"
+        ],
+        "packets":[
+            "GetAnemometerFC307"
+        ]
+    },
+    "GetMonitorIncliHCF420":{
+        "fields":[
+            "response_time",
+            "sample_interval",
+            "angle_threshold_1",
+            "angle_threshold_2",
+            "angle_threshold_3",
+            "group"
+        ],
+        "packets":[
+            "GetMonitorIncliHCF420"
+        ]
+    },
+    "SetMainDirectionInclination":{
+        "fields":[
+            "main_direction"
+        ],
+        "packets":[
+            "SetMainDirectionInclination"
+        ]
+    },
+    "ConfigClockTask":{
+        "fields":[
+            "is_on_1",
+            "hour_1",
+            "minute_1",
+            "second_1",
+            "interval_1",
+            "number_1",            
+            "is_on_2",
+            "hour_2",
+            "minute_2",
+            "second_2",
+            "interval_2",
+            "number_2",
+            "odr",
+            "range",
+            "axis",
+            "period",
+            "def_sample_type",
+            "channel_bit",
+            "sample_pattern",
+            "is_continuous",
+            "is_out_power",
+            "is_factory_init",
+            "is_user_init",
+            "k_value",
+            "local_channel_bit",
+            "ext_channel_bit",
+            "odr_s",
+            "range_s",
+            "axis_s",
+            "period_s",
+            "def_sample_type_s",
+            "channel_bit_s",
+            "sample_pattern_s",
+            "is_continuous_s",
+            "is_out_power_s",
+            "is_factory_init_s",
+            "is_user_init_s",
+            "k_value_s",
+            "local_channel_bit_s",
+            "ext_channel_bit_s",
+            "running_mode",
+            "analog_sample_type"
+        ],
+        "SampleodrSCD1F1":{
+            "odr_9600Hz":0,
+            "odr_4800Hz":1,
+            "odr_2400Hz":2
+        },
+        "extend_fields":{
+            "clock_num":"int32",
+            "running_mode_s":"int32",
+            "def":"int32",
+            "def_s":"int32",
+            "is_on":"int32",
+            "hour":"int32",
+            "minute":"int32",
+            "second":"int32",
+            "interval":"int32",
+            "number":"int32",
+            "odrSCD1F1":"SampleodrSCD1F1",
+            "is_on_trigger":"uint32",
+            "threshold":"double",
+            "listen_interval":"uint32",
+            "alarm_num":"uint32",
+            "alarm_interval":"uint32",
+            "send_interval":"uint32",
+            "is_on_x":"uint32",
+            "is_on_y":"uint32",
+            "is_on_absolute":"uint32",
+            "threshold_x":"double",
+            "threshold_y":"double",
+            "threshold_absolute":"double",
+            "schedule_id":"int32"
+        },
+        "packets":[
+            "ConfigClockTaskHCF100",
+            "ConfigClockTaskHCF200",
+            "ConfigClockTaskHCF300",
+            "ConfigClockTaskHCF400",
+            "ConfigClockTaskHCF500",
+            "ConfigClockTaskHCF600",
+            "ConfigClockTaskHIS800",
+            "ConfigClockTaskHCF2000",
+            "ConfigClockTaskHCF3000",
+            "ConfigClockTaskHCF4000",
+            "ConfigClockTaskHFS200",
+            "ConfigClockTaskHFS200V1",
+            "ConfigClockTaskHFS400",
+            "ConfigClockTaskHFS316",
+            "ConfigClockTaskHIS100",
+            "ConfigClockTaskHIS300",
+            "ConfigClockTaskHIS500",
+            "ConfigClockTaskHGR100B2",
+            "ConfigClockTaskHFS500",
+            "ConfigClockTaskHCF910",
+            "ConfigClockTaskGRTU1000",
+            "ConfigClockTaskFC307",
+            "ConfigClockTaskHFS530",
+            "ConfigClockTaskDTUC",
+            "ConfigClockTaskHIS400"
+        ],
+        "extend_packets": [
+            "ConfigClockTaskSS40N1",
+            "ConfigClockTaskSS40N2",
+            "ConfigClockTaskSCZ0F1",
+            "ConfigClockTaskSCZ0N1",
+            "ConfigClockTaskSS44F1",
+            "ConfigClockTaskSCD1F1",
+            "ConfigClockTaskSS42F1",
+            "ConfigClockTask",
+            "ConfigSchedulers"
+
+
+        ]
+    },
+    "SetTriggerConfigInfo":{
+        "fields":[
+            "is_set_trigger",
+            "monitor_odr",
+            "monitor_axis",
+            "trigger_odr",
+            "trigger_axis",
+            "trigger_range",
+            "trigger_sensitivity",
+            "trigger_threshold",
+            "trigger_period"
+        ],
+        "packets":[
+            "SetTriggerConfigHCF300",
+            "SetTriggerConfigHCF4000"
+        ]
+    },
+    "SimpleSampleHIS700":{
+        "fields":[
+            "disconnect_timeout"
+        ],
+        "packets":[
+            "GetWinderCupSampleHCF910RS"
+        ]
+    },
+    "OnceInstructionHIS700":{
+        "fields":[
+            "addr",
+            "disconnect_timeout"
+        ],
+        "packets":[
+            "GetAnemometerHCF920RS",
+            "GetMeteorologyHCF930RS",
+            "GetCH4HOS3000CH4RS",
+            "GetShapeArrayHCF1100RS",
+            "GetTempHumiHOS9010RS",
+            "GetCH4HOS3000CH4RS"
+        ]
+    },
+    "TwiceInstructionHIS700":{
+        "fields":[
+            "addr",
+            "disconnect_timeout",
+            "sample_collect_interval"
+        ],
+        "packets":[
+            "GetVibraWireHFS316RS",
+            "GetVibraWireHFS716RS",
+            "GetDistanceHOS910030RS",
+            "GetSettlementHCF700RS"
+        ]
+    },
+    "HIS700AutoSample":{
+        "fields":[
+            "is_on",
+            "sample_collect_interval",
+            "auto_sample_interval",
+            "disconnect_timeout"
+        ],
+        "packets":[
+            "HIS700AutoSample"
+        ]
+    },
+    "SetStdNodeHGR100B2":{
+        "fields":[
+            "reference_node"
+        ],
+        "packets":[
+            "SetStdNodeHGR100B2"
+        ]
+    },
+    "SetBaudrateHIS700":{
+        "fields":[
+            "baudrate"
+        ],
+        "packets":[
+            "SetBaudrateHIS700"
+        ]
+    },
+    "SetChannelConfigHFS316":{
+        "fields":[
+            "channel_config_bit"
+        ],
+        "packets":[
+            "SetChannelConfigHFS316"
+        ]
+    },
+    "GetGatewayCtrlInfo":{
+        "fields":null,
+        "extend_fields":{
+            "command": "string"
+        },
+        "packets":[
+            "GetGatewayCtrlInfo"
+        ]
+    },
+    "AddCalibrationHCF2000":{
+        "fields":[
+            "temp",
+            "offset"
+        ],
+        "packets":[
+            "AddCaliHCF2000"
+        ]
+    },
+    "RegistryOpHCF700HGR100B2": {
+        "fields":[
+            "addr"
+        ],
+        "packets":[
+            "ReadHoldRegHCF700HGR100B2",
+            "ReadInputRegHCF700HGR100B2",
+            "InitPressHGR100B2"
+        ]
+    },
+    "SetHoldRegHCF700HGR100B2": {
+        "fields":[
+            "dest_addr",
+            "set_addr",
+            "channel_bit",
+            "init_value",
+            "density",
+            "g_value",
+            "full_adc_value",
+            "zero_adc_value",
+            "full_sensor_value"
+        ],
+        "packets":[
+            "SetHoldRegHCF700HGR100B2"
+        ]
+    },
+    "SetIncliCalibration": {
+        "fields":[
+            "incli_marked",
+            "main_direction",
+            "origin_x",
+            "origin_y",
+            "origin_z"
+        ],
+        "packets":[
+            "SetIncliCalibration"
+        ]
+    },
+    "SetChannelFreqInfo": {
+        "fields":[
+            "channel_freq",
+            "period"
+        ],
+        "packets":[
+            "SetChannelFreqHFS500",
+            "SetChannelFreqHFS530"
+        ],
+        "extend_packets":[
+            "SetChannelFreqMTCollecter",
+            "SetChannelFreqHFS716Collecter"
+        ]
+    },
+    "SetChannelConfigHIS100": {
+        "fields":[
+            "channel1_config",
+            "channel2_config",
+            "channel3_config",
+            "channel4_config"
+        ],
+        "packets":[
+            "SetChannelConfigHIS100"
+        ]
+    },
+    "SetCaliHIS100": {
+        "fields":[
+            "channel_bit",
+            "number",
+            "sensor_data",
+            "standard_data"
+        ],
+        "packets":[
+            "SetCaliHIS100"
+        ]
+    },
+    "RemoveCaliHIS100": {
+        "fields":[
+            "channel_bit"
+        ],
+        "packets":[
+            "RemoveCaliHIS100"
+        ]
+    },
+    "ChangeInstructionHIS700": {
+        "fields":[
+            "main_type",
+            "sub_type",
+            "disconnect_timeout",
+            "is_operate_eeprom",
+            "is_write",
+            "is_sample_instruct",
+            "instruct_length",
+            "instruct"
+        ],
+        "packets":[
+            "InstructionConfigHIS700",
+            "ClearInstructionHIS700"
+        ]
+    },
+    "ChangeNodeWhiteListTransNode": {
+        "fields":[
+            "serial_number"
+        ],
+        "packets":[
+            "AddNodeWhiteListTransNode",
+            "RemoveNodeWhiteListTransNode"
+        ]
+    },
+    "CloseWhiteListTransNode": {
+        "fields":[
+            "close_flag"
+        ],
+        "packets":[
+            "CloseNodeWhiteListTransNode"
+        ]
+    },
+    "AddNodeRSUC":{
+        "fields":[
+            "sample_ins_type",
+            "product_ins_type",
+            "product_type",
+            "node_type",
+            "node_num",
+            "addr"
+        ],
+        "packets":[
+            "AddNodeRSUC"
+        ]
+    },
+    "AddOneInsRSUC":{
+        "fields":[
+            "product_ins_type",
+            "product_type",
+            "ins_len",
+            "ins"
+        ],
+        "packets":[
+            "AddOneInsRSUC"
+        ]
+    },
+    "AddTwoInsRSUC":{
+        "fields":[
+            "product_ins_type",
+            "product_type",
+            "sample_ins_len",
+            "retrieve_ins_len",
+            "ins"
+        ],
+        "packets":[
+            "AddTwoInsRSUC"
+        ]
+    },
+    "DeleteNodeInfoRSUC":{
+        "fields":[
+            "addr"
+        ],
+        "packets":[
+            "DeleteNodeInfoRSUC"
+        ]
+    },
+    "DeleteInstructionRSUC":{
+        "fields":[
+            "product_type"
+        ],
+        "packets":[
+            "DeleteInstructionRSUC"
+        ]
+    },
+    "SetSampleParameterRSUC":{
+        "fields":[
+            "pow_on_interval",
+            "retrieve_interval",
+            "product_pow_sup_mode",
+            "product_pow_sup_vol"
+        ],
+        "packets":[
+            "SetSampleParameterRSUC"
+        ]
+    },
+    "TransparentInstructionRSUC":{
+        "fields":[
+            "product_type",
+            "product_ins_type",
+            "data_len",
+            "data"
+        ],
+        "packets":[
+            "TransparentInstructionRSUC"
+        ]
+    },
+    "GetSampleDataRSUC":{
+        "fields":[
+            "addr",
+            "sample_ins_type",
+            "product_ins_type",
+            "product_type"
+        ],
+        "packets":[
+            "GetSampleDataRSUC"
+        ]
+    },
+    "GetAnalogDataALUC":{
+        "fields":[
+            "analog_sample_type",
+            "odr",
+            "period"
+        ],
+        "packets":[
+            "GetAnalogDataALUC",
+            "GetAnalogDataALUCCont"
+        ]
+    },
+    "SetCalibrationALUC":{
+        "fields":[
+            "analog_sample_type"
+        ],
+        "packets":[
+            "SetCalibrationALUC"
+        ]
+    },
+    "SetSensorConfigHIS400":{
+        "fields":[
+            "k_value",
+            "s_value"
+        ],
+        "packets":[
+            "SetSensorConfigHIS400"
+        ]
+    },
+    "GetStressData":{
+        "fields":[
+            "odr"
+        ],
+        "packets":[
+            "GetStressHIS400"
+        ]
+    },
+    "GetRS485DataRSUCCont":{
+        "fields":[
+            "odr",
+            "period"
+        ],
+        "packets":[
+            "GetRS485DataRSUCCont"
+        ]
+    },
+    "SetSampleMode":{
+        "fields":[
+            "sample_mode"
+        ],
+        "packets":[
+            "SetSampleMode"
+        ]
+    },
+    "SetTransMode":{
+        "fields":[
+            "send_mode"
+        ],
+        "packets":[
+            "SetTransMode"
+        ]
+    },
+    "SetTriggerConfig":{
+        "fields":[
+            "wind_threshold",
+            "wind_debounce"
+        ],
+        "packets":[
+            "SetTriggerSampleConfigHCF910"
+        ]
+    },
+    "OtaReceivePiece":{
+        "fields": null,
+        "extend_fields":{
+            "filename": "string",
+            "piece_num": "int32",
+            "piece_size": "int32",
+            "piece_data": "string"
+        },
+        "packets":[
+            "OtaReceivePiece"
+        ]
+    },
+    "OtaAddFile":{
+        "fields": null,
+        "extend_fields":{
+            "filename": "string",
+            "filesize": "int32",
+            "is_load": "int32"
+            
+        },
+        "packets":[
+            "OtaAddFile"
+        ]
+    },
+    "OtaCancelFile":{
+        "fields": null,
+        "extend_fields":{
+            "filename": "string"
+        },
+        "packets":[
+            "OtaCancelFile"
+        ]
+    },
+    "SetAlgorithmConfig":{
+        "fields": null,
+        "extend_fields":{
+            "kn_0": "repeated double",
+            "kn_1": "repeated double",
+            "kn_2": "repeated double",
+            "peaks": "repeated uint32",
+            "axis": "uint32",
+            "temp_grid": "int32"
+        },
+        "packets":[
+            "SetAlgorithmConfigSS40N2",
+            "SetIncliTempCaliValue"
+        ]
+    },
+    "ServerAddress":{
+        "fields": null,
+        "extend_fields":{
+            "server_address": "string"
+        },
+        "packets":[
+            "AddServerAddress",
+            "DeleteServerAddress"
+        ]
+    },
+    "SetMQTTParameter":{
+        "fields": null,
+        "extend_fields":{
+            "user_name": "string",
+            "password": "string"
+        },
+        "packets":[
+            "SetMQTTParameter"
+        ]
+    },
+    "DownNodeDataCRTX":{
+        "fields": null,
+        "extend_fields":{
+            "addr": "uint32",
+            "pro_type": "uint32",
+            "node_type": "uint32",
+            "node_group": "uint32"
+        },
+        "packets":[
+            "AddNodeCRTX",
+            "DeleteNodeInfoCRTX",
+            "ChangeNodeCRTX",
+            "QueryNodeCRTX"
+        ]
+    },
+    "ConfigVibraWireParameter":{
+        "fields": null,
+        "extend_fields":{
+            "ch0_midfreq": "uint32",
+            "ch1_midfreq": "uint32",
+            "ch2_midfreq": "uint32",
+            "ch3_midfreq": "uint32",
+            "ch4_midfreq": "uint32",
+            "ch5_midfreq": "uint32",
+            "ch6_midfreq": "uint32",
+            "ch7_midfreq": "uint32",
+            "ch8_midfreq": "uint32",
+            "ch9_midfreq": "uint32",
+            "ch10_midfreq": "uint32",
+            "ch11_midfreq": "uint32",
+            "ch12_midfreq": "uint32",
+            "ch13_midfreq": "uint32",
+            "ch14_midfreq": "uint32",
+            "ch15_midfreq": "uint32",
+            "ch16_midfreq": "uint32"
+        },
+        "packets":[
+            "ConfigVibraWireParameterSCZ0F1",
+            "ConfigVibraWireParameterSCZ0N1"
+        ]
+    },
+    "SetTriggerSampleConfig":{
+        "fields": null,
+        "extend_fields":{
+            "vibra_debounce": "uint32",
+            "vibra_threshold_x": "uint32",
+            "vibra_threshold_y": "uint32",
+            "vibra_threshold_z": "uint32"
+        },
+        "packets":[
+            "SetTriggerSampleConfigSS44F1"
+        ]
+    },
+    "ConfigTimeSyncParameter":{
+        "fields": null,
+        "extend_fields":{
+            "is_sync_need": "uint32",
+            "sync_interval": "uint32",
+            "sync_timeout_period": "uint32"
+        },
+        "packets":[
+            "ConfigTimeSyncParameter"
+        ]
+    },
+    "SetADCGain":{
+        "fields": null,
+        "ADC_gain":{
+            "gain_1x": 0,
+            "gain_2x": 1,
+            "gain_4x": 2,
+            "gain_8x": 3,
+            "gain_16x": 4,
+            "gain_32x": 5,
+            "gain_64x": 6,
+            "gain_128x": 7
+        },
+        "extend_fields":{
+            "adc_gain": "ADC_gain"
+        },
+        "packets":[
+            "SetADCGainSCD1F1"
+        ]
+    },
+    "SetAnalogGain":{
+        "fields": null,
+        "extend_fields":{
+            "analog_gain": "double"
+        },
+        "packets":[
+            "SetAnalogGainSCD1F1"
+        ]
+    },
+
+    "SetTriggerSampleConfigHCF4000":{
+        "fields": [
+            "incli_threshold",
+            "incli_debounce",
+            "cable_threshold",
+            "vibra_debounce",
+            "vibx_threshold",
+            "viby_threshold",
+            "vibz_threshold"
+        ],
+        "packets":[
+            "SetTriggerSampleConfigHCF4000"
+        ]},
+    "SetBaudSPRS": {
+        "fields":null,
+        "Baud": {
+            "bps4800": 0,
+            "bps9600": 1,
+            "bps38400": 2,
+            "bps57600": 3,
+            "bps115200": 4
+        },
+        "extend_fields": {
+            "baud": "Baud"
+        },
+        "packets": null
+    },
+    "SetPowerStatusSPRS": {
+        "fields":null,
+        "PowerStatus": {
+            "POWER_ON": 0,
+            "POWER_OFF": 1,
+            "POWER_AUTO": 2
+        },
+        "extend_fields": {
+            "power_status": "PowerStatus"
+        },
+        "packets": null
+    },
+    "SetTransparentInsSPRS": {
+        "fields":null,
+        "extend_fields": {
+            "up_msg_type_id": "string",
+            "recv_timeout_in_ms": "int32",
+            "ins_payload": "bytes"
+        },
+        "packets": null
+    },
+    "SetSPRSClockTask":{
+        "fields":null,
+        "extend_fields": {
+            "cfg_list": "repeated SPRSClockTaskCfg"
+        },
+        "packets":null,
+        "extend_packets": [
+            "SetSPRSClockTask"
+        ] 
+    },
+    "SetSPRSTrigger":{
+        "fields":null,
+        "extend_fields": {
+            "cfg_list": "repeated ThresholdCfg"
+        },
+        "packets":null,
+        "extend_packets": [
+            "SetSPRSTrigger"
+        ]
+    },
+    "ConfigVibraWirePara": {
+        "fields": null,
+        "extend_fields": {
+            "para_list": "repeated VibraWireParaInfo"
+        },
+        "packets":null,
+        "extend_packets": [
+            "ConfigVibraWirePara"
+        ]
+    },
+    "InitVibraWire": {
+        "fields":null,
+        "extend_fields": {
+            "init_ins": "int32",
+            "Init_local_channel": "int32",
+            "Init_ext_channel": "int32"
+        },
+        "packets": null,
+        "extend_packets": [
+            "InitVibraWire"
+        ]
+    }
+}

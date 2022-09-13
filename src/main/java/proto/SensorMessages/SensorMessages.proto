@@ -1,0 +1,1721 @@
+syntax = "proto3";
+
+option java_package = "com.smartbow.sensormessages";
+option go_package = ".;SensorMessages";
+
+
+message HighPrecisionIncliData{
+   double angle = 1;
+   double chip_temp = 2;
+   double raw_angle = 3;
+   double digital_angle = 4;
+   double cali_angle = 5;
+}
+
+message TempHumiData{
+   int32 addr = 1;
+   double temp = 2;
+   double humi = 3;
+}
+
+message VibraWireData{
+   int32 db = 1;
+   double freq = 2;
+   double temp = 3;
+   double data = 4;
+   double voltage = 5;
+   double sample_interval = 6;
+   int32 addr = 7;
+   int32 ch_num = 101;
+   double ch_result = 102;
+   double ch_temper = 103;
+   double ch_init_data = 104;
+   int32 ch_status = 105;
+}
+
+message AnemometerData{
+   double wind_direction = 1;
+   double wind_speed = 2;
+   double temp = 3;
+   double humi = 4;
+   double dev_temp = 5;
+   double smooth_wind_speed = 6;
+   double smooth_wind_direction = 7;
+   double air_pressure = 8;
+   int32 addr = 9;
+   int32 heat_mode = 10;
+   int32 err_env = 11;
+   int32 speed_status = 12;
+   int32 err_heat = 13;
+   int32 err_ntc = 14;
+   int32 heat_status = 15;
+   int32 worktime = 16;
+   string serial_number = 17;
+   int32 version = 18;
+}
+
+message InclinationData{
+   double absolute_angle = 1;
+   double primary_projection = 2;
+   double secondary_projection = 3;
+   double chip_temp = 101;
+   double cali_angle_x = 102;
+   double cali_angle_y = 103;
+   double raw_angle_x = 104;
+   double raw_angle_y = 105;
+   double threshold = 106;
+   uint32 is_superthreshold = 107;
+   double threshold_x = 108;
+   double threshold_y = 109;
+   double threshold_absolute = 110;
+}
+
+message VoltageData{
+   double data = 1;
+   double sample_interval = 2;
+   int32 sample_type = 3;
+   double data_x = 101;
+   double data_y = 102;
+}
+
+message CurrentData{
+   double data = 1;
+   double sample_interval = 2;
+   int32 sample_type = 3;
+}
+
+message ResistanceData{
+   double data = 1;
+   double sample_interval = 2;
+   int32 sample_type = 3;
+}
+
+message MillivoltData{
+   double data = 1;
+   double sample_interval = 2;
+   int32 sample_type = 3;
+}
+
+message VibrationData{
+   double data = 1;
+   string range = 2;
+   double sample_interval = 3;
+   double speed = 101;
+   double speed_x = 102;
+   double speed_y = 103;
+   double speed_z = 104;
+   double acc = 105;
+   double acc_peek_to_peek = 106;
+   double acc_max_abs = 107;
+   double freq = 108;
+   double acc_rms = 109;
+   double acc_level = 110;
+}
+
+message CablePeaksData{
+   double average_power = 1;
+   string axis = 2;
+   double base_freq = 3;
+   double freq = 4;
+   string odr = 5;
+   repeated int32 peaks = 6;
+   int32 peaks_num = 7;
+   repeated int32 values = 8;
+   int32 quality = 9;
+   string range = 10;
+   double extent = 11;
+   double cable = 101;
+   uint32 point_width = 102;
+   uint32 id = 103;
+   repeated float f_value = 104;
+   double t_cable = 105;
+   repeated uint32 peaks_res = 106;
+   repeated uint32 peaks_cali = 107;
+   double temp = 108;
+   double integral = 109;
+}
+
+message SettlementData{
+   int32 addr = 1;
+   double raw_value = 2;
+   double value = 3;
+   double relative_value = 4;
+   double temp = 5;
+   double adc_value = 6;
+   double raw_press = 7;
+   int32 worktime = 8;
+   int32 system_status = 9;
+   double pre_cali_raw_value = 10;
+   double pre_cali_relative_value = 11;
+}
+
+message StressData{
+   double data = 1;
+   double sample_interval = 2;
+}
+
+message IncliHCF410V1{
+   double x = 1;
+   double y = 2;
+   double z = 3;
+}
+
+message GRTU1000{
+   int32 gas_channel_1 = 1;
+   int32 gas_channel_2 = 2;
+   int32 gas_channel_3 = 3;
+   int32 gas_channel_4 = 4;
+   double temp = 5;
+}
+
+message HOS3000CH4{
+   int32 addr = 1;
+   int32 gas_strength = 2;
+}
+
+message DistanceData{
+   double distance = 1;
+   int32 addr = 2;
+   int32 measure_mode = 3;
+   int32 fan_work_mode = 4;
+   int32 sensor_status = 5;
+   int32 baudrate = 6;
+   double angle = 101;
+}
+
+message Uart485ForHFS716Sample{
+   double temperature_or_ressum = 1;
+   double Hz_or_resratio = 2;
+   int32 channel_unixtime = 3;
+   int32 addr = 4;
+   string serial_number = 5;
+   int32 version = 6;
+}
+
+message VoltageDataV1{
+   double millivolt = 1;
+   double temp = 2;
+   double voltage = 3;
+}
+
+message TopInfoNodeData{
+   int32 SQI = 1;
+   int32 parent = 2;
+   double battery_voltage = 3;
+   string product_type = 4;
+   int32 reboot_count = 5;
+   int32 rf_channel = 6;
+   int32 sampling = 7;
+   int32 version = 8;
+   int32 state = 9;
+   int32 incli_marked = 10;
+   int32 synced = 11;
+   int32 worktime = 12;
+   int32 is_on = 13;
+   int32 hour = 14;
+   int32 minute = 15;
+   int32 second = 16;
+   int32 interval = 17;
+   int32 number = 18;
+   string node_type = 19;
+   int32 last_reset_type = 20;
+   int32 rf_power = 21;
+   int32 top_state = 22;
+   int32 is_sync_error_t = 23;
+   int32 sensor_init = 24;
+   int32 send_delay = 25;
+   int32 tx_mode = 26;
+   int32 battery_num = 101;
+   int32 battery_type = 102;
+   double load_voltage = 103;
+   int32 rsrp = 104;
+   int32 rsrq = 105;
+   int32 rssi = 106;
+   int32 snr = 107;
+   int32 tx_pwr = 108;
+   int32 csq = 109;
+   uint32 gatt_time = 110;
+}
+
+message PowerStateNodeData{
+   int32 battery_num = 1;
+   int32 battery_type = 2;
+   int32 cha_state = 3;
+   int32 chr_state = 4;
+   double temp = 5;
+   double battery_voltage = 6;
+   double current = 7;
+   int32 residual_electricity = 8;
+   int32 is_charging = 9;
+   int32 csq = 10;
+}
+
+message SerialNumber{
+   string serial_number = 1;
+}
+
+message SoftVersion{
+   int32 version = 1;
+}
+
+message ClockTaskTimeInfoSensorNode{
+   int32 clock1_is_on = 1;
+   int32 clock1_hour = 2;
+   int32 clock1_minute = 3;
+   int32 clock1_second = 4;
+   int32 clock1_interval = 5;
+   int32 clock1_number = 6;
+   int32 clock2_is_on = 7;
+   int32 clock2_hour = 8;
+   int32 clock2_minute = 9;
+   int32 clock2_second = 10;
+   int32 clock2_interval = 11;
+   int32 clock2_number = 12;
+   int32 clock0_is_on = 13;
+   int32 clock0_hour = 14;
+   int32 clock0_minute = 15;
+   int32 clock0_second = 16;
+   int32 clock0_interval = 17;
+   int32 clock0_number = 18;
+   uint32 send_interval = 101;
+}
+
+message HoldRegisterData1HCF700{
+   int32 addr = 1;
+   double init_value = 2;
+   double density = 3;
+}
+
+message HoldRegisterData2HCF700{
+   int32 addr = 1;
+   double g_value = 2;
+   double full_sensor_value = 3;
+   double full_adc_value = 4;
+   double zero_adc_value = 5;
+}
+
+message InputRegisterDataHCF700{
+   int32 version = 1;
+   int32 worktime = 2;
+   int32 addr = 3;
+   double relative_value = 4;
+   double raw_value = 5;
+   double temp = 6;
+   double adc_value = 7;
+}
+
+message GRTU1000Status{
+   int32 longdata = 1;
+   int32 latidata = 2;
+   int32 latitude = 3;
+   int32 longitude = 4;
+}
+
+message WeightingData{
+   string LaneID = 101;
+   string LaneIDFlyOver = 102;
+   double Speed = 103;
+   string Plate = 104;
+   string VehType = 105;
+   double GrossLoad = 106;
+   string error = 107;
+   string AL = 108;
+   string GV = 109;
+   string OS = 110;
+   string ImageFile = 111;
+   double AxleLoad1 = 112;
+   double AxleLoad2 = 113;
+   double AxleLoad3 = 114;
+   double AxleLoad4 = 115;
+   double AxleLoad5 = 116;
+   double AxleLoad6 = 117;
+   double AxleLoad7 = 118;
+   double AxleLoad8 = 119;
+   double AxleSpacing1 = 120;
+   double AxleSpacing2 = 121;
+   double AxleSpacing3 = 122;
+   double AxleSpacing4 = 123;
+   double AxleSpacing5 = 124;
+   double AxleSpacing6 = 125;
+   double AxleSpacing7 = 126;
+   double carLength = 127;
+   string cross_lane = 128;
+   string reverse = 129;
+   uint32 axle_count = 130;
+   double chassis_freq = 131;
+   double temp = 132;
+   string devTypeName = 133;
+}
+
+message CalibrationConfigHCF2000{
+   int32 number = 1;
+   double temp = 2;
+   double offset = 3;
+}
+
+message InitIncliInfo{
+   int32 incli_marked = 1;
+   int32 main_direction = 2;
+   sint32 origin_x = 3;
+   sint32 origin_y = 4;
+   sint32 origin_z = 5;
+   double origin_incli_x = 101;
+   double origin_incli_y = 102;
+   double origin_incli_z = 103;
+   double chip_temp = 104;
+   uint32 is_temp_cali = 105;
+}
+
+message InitIncliHCF200Done{
+   int32 error_t = 1;
+}
+
+message ClockTaskSampleInfoAndTriggerSampleInfo{
+   string odr = 1;
+   string range = 2;
+   string axis = 3;
+   int32 period = 4;
+   int32 def_sample_type = 5;
+   int32 main_direction = 6;
+   int32 incli_marked = 7;
+   string odr_s = 8;
+   string range_s = 9;
+   string axis_s = 10;
+   int32 period_s = 11;
+   int32 def_sample_type_s = 12;
+   int32 main_direction_s = 13;
+   int32 incli_marked_s = 14;
+   int32 is_set_trigger = 15;
+   string monitor_odr = 16;
+   string monitor_axis = 17;
+   string trigger_odr = 18;
+   string trigger_axis = 19;
+   string trigger_range = 20;
+   double trigger_sensitivity = 21;
+   double trigger_threshold = 22;
+   int32 trigger_period = 23;
+}
+
+message StdNodeHGR100B2{
+   int32 reference_node = 1;
+}
+
+message ExistNodesHGR100B2{
+   repeated int32 node_bit = 1;
+}
+
+message ClockTaskSampleInfo{
+   string odr = 1;
+   string range = 2;
+   string axis = 3;
+   string odr_s = 4;
+   string range_s = 5;
+   string axis_s = 6;
+   int32 channel_bit = 7;
+   int32 channel_bit_s = 8;
+   int32 sample_pattern = 9;
+   int32 sample_pattern_s = 10;
+   int32 main_direction = 11;
+   int32 period = 12;
+   int32 period_s = 13;
+   int32 local_channel_bit = 14;
+   int32 ext_channel_bit = 15;
+   int32 local_channel_bit_s = 16;
+   int32 ext_channel_bit_s = 17;
+   int32 is_continuous = 18;
+   int32 is_out_power = 19;
+   int32 is_factory_init = 20;
+   int32 is_user_init = 21;
+   int32 is_continuous_s = 22;
+   int32 is_factory_init_s = 23;
+   int32 is_user_init_s = 24;
+   string odr_v = 101;
+   string range_v = 102;
+   string axis_v = 103;
+   int32 period_v = 104;
+   int32 running_mode = 105;
+   int32 running_mode_s = 106;
+   int32 def = 107;
+   int32 def_s = 108;
+   int32 def_v = 109;
+   enum ADC_gain {
+      gain_1x = 0;
+      gain_2x = 1;
+      gain_4x = 2;
+      gain_8x = 3;
+      gain_16x = 4;
+      gain_32x = 5;
+      gain_64x = 6;
+      gain_128x = 7;
+   }
+   ADC_gain adc_gain = 110;
+   double analog_gain = 111;
+}
+
+message ChannelInfoHFS316{
+   int32 max_channel_num = 1;
+   int32 channel_info = 2;
+}
+
+message ChannelInfoHIS100{
+   int32 channel1_config = 1;
+   int32 channel2_config = 2;
+   int32 channel3_config = 3;
+   int32 channel4_config = 4;
+   int32 voltage = 5;
+}
+
+message ChannelFreqInfo{
+   repeated double channel_freq = 1;
+}
+
+message CaliInfoHIS100{
+   int32 channel_bit = 1;
+   int32 number = 2;
+   int32 calibration_num = 3;
+   sint32 sensor_data = 4;
+   sint32 standard_data = 5;
+}
+
+message Uart485AutoSampleFlag{
+   int32 auto_sample_interval = 1;
+   int32 disconnect_interval = 2;
+   int32 sample_collect_interval = 3;
+   int32 auto_sample_flag = 4;
+   int32 baudrate = 5;
+}
+
+message Uart485CmdList{
+   int32 sub_type = 1;
+   int32 main_type = 2;
+   string product_type = 3;
+   int32 sample_data_length = 4;
+   repeated int32 sample_instruct = 5;
+   int32 collect_data_length = 6;
+   repeated int32 collect_instruct = 7;
+}
+
+message Uart485TypeList{
+   int32 addr = 1;
+   int32 main_type = 2;
+   int32 sub_type = 3;
+   string product_type = 4;
+}
+
+message ShapeArrayHCF1100{
+   int32 addr = 1;
+   double acc_x = 2;
+   double acc_y = 3;
+   double acc_z = 4;
+   double acc_temp = 5;
+   double magnetic_x = 6;
+   double magnetic_y = 7;
+   double magnetic_z = 8;
+   double length = 9;
+   string serial_number = 10;
+   double pitch = 11;
+   double roll = 12;
+   double yaw = 13;
+   double pitch_init = 14;
+   double roll_init = 15;
+   double yaw_init = 16;
+   double coordinate_x = 17;
+   double coordinate_y = 18;
+   double coordinate_z = 19;
+   double coordinate_init_x = 20;
+   double coordinate_init_y = 21;
+   double coordinate_init_z = 22;
+   double x = 101;
+   double y = 102;
+   double z = 103;
+}
+
+message NodeInfoRSUC{
+   repeated int32 addr = 1;
+   repeated int32 sample_ins_type = 2;
+   repeated int32 product_ins_type = 3;
+   repeated string product_type = 4;
+   repeated int32 node_type = 5;
+}
+
+message InstructionInfoRSUC{
+   string product_type = 1;
+   int32 product_ins_type = 2;
+   int32 product_ins_type_index = 3;
+   repeated int32 ins_buf = 4;
+}
+
+message TransparentDataRSUC{
+   int32 product_type = 1;
+   int32 product_ins_type = 2;
+   int32 data_len = 3;
+   repeated int32 data = 4;
+}
+
+message ChildNodeTransNode{
+   int32 is_snoop = 1;
+   int32 total = 2;
+   int32 snoop_total = 3;
+   int32 sub_total = 4;
+   repeated int32 node_in_network = 5;
+}
+
+message NodeWhiteListEntryTransNode{
+   string serial_number = 1;
+}
+
+message CurrentDataV1{
+   double current = 1;
+}
+
+message SampleParameterDataRSUC{
+   int32 product_pow_sup_mode = 1;
+   int32 voltage = 2;
+   int32 running_mode = 3;
+   int32 analog_sample_type = 4;
+   int32 odr = 5;
+   int32 period = 6;
+   int32 pow_on_interval = 7;
+   int32 retrieve_interval = 8;
+}
+
+message SensorConfigInfoHIS400{
+   double k_value = 1;
+   double s_value = 2;
+   double value_0 = 3;
+}
+
+message VirtualModuleNAODU{
+   double val = 101;
+   repeated double kx = 102;
+   repeated double kk = 103;
+}
+
+message VirtualModuleHCF700_485_Naodu{
+   double val = 101;
+}
+
+message VirtualModuleHCF1100{
+   int32 group = 101;
+   repeated double x1_0 = 102;
+   repeated double x2_0 = 103;
+   repeated double z_0 = 104;
+   repeated double x1_1 = 105;
+   repeated double x2_1 = 106;
+   repeated double z_1 = 107;
+}
+
+message DistanceHOS910030I1RSUCCont{
+   double data = 1;
+   int32 addr = 2;
+   double sample_interval = 3;
+}
+
+message AnalogSampleDataCont{
+   double data = 1;
+   double sample_interval = 2;
+}
+
+message TopInfoRSUC{
+   int32 version = 1;
+   string serial_number = 2;
+}
+
+message InclinationRSUC{
+   double angle_x = 1;
+   double angle_y = 2;
+   double angle_z = 3;
+}
+
+message DistanceRSUCCont{
+   double data = 1;
+   int32 addr = 2;
+   double sample_interval = 3;
+}
+
+message SampleMode{
+   int32 sample_mode = 1;
+}
+
+message TriggerSampleConfigInfo{
+   int32 send_mode = 1;
+   int32 is_trigger_set = 2;
+   int32 is_triggered = 3;
+   int32 wind_threshold = 4;
+   int32 wind_debounce = 5;
+   int32 incli_threshold = 6;
+   uint32 is_incli_triggered = 101;
+   uint32 is_cable_triggered = 102;
+   uint32 is_vibra_triggered = 103;
+   uint32 incli_debounce = 104;
+   uint32 cable_threshold = 105;
+   uint32 vibra_debounce = 106;
+   uint32 vibra_threshold_x = 107;
+   uint32 vibra_threshold_y = 108;
+   uint32 vibra_threshold_z = 109;
+   uint32 is_on_trigger = 110;
+   double threshold = 111;
+   uint32 listen_interval = 112;
+   uint32 alarm_num = 113;
+   uint32 alarm_interval = 114;
+   uint32 send_interval = 115;
+   uint32 is_on_x = 116;
+   uint32 is_on_y = 117;
+   uint32 is_on_absolute = 118;
+   double threshold_x = 119;
+   double threshold_y = 120;
+   double threshold_absolute = 121;
+}
+
+message TriggerEvent{
+   int32 sample_type = 1;
+   string filename = 101;
+   int32 level = 102;
+   double alert_value = 103;
+}
+
+message IncliContData{
+   double angle = 101;
+   double sample_interval = 102;
+   double angle_x = 103;
+   double angle_y = 104;
+   double angle_z = 105;
+}
+
+message TempHumiContData{
+   double temp = 101;
+   double humi = 102;
+   double air_pressure = 103;
+   double sample_interval = 104;
+}
+
+message DistanceContData{
+   double distance = 101;
+   double sample_interval = 102;
+   double distance_x = 103;
+   double distance_y = 104;
+}
+
+message StrainContData{
+   double strain = 101;
+   double sample_interval = 102;
+}
+
+message SettlementContData{
+   double deflection = 101;
+   double sample_interval = 102;
+}
+
+message AnemometerContData{
+   double wind_speed = 101;
+   double wind_direction = 102;
+   double wind_speed_U = 103;
+   double wind_speed_V = 104;
+   double wind_speed_W = 105;
+   double virtual_temp = 106;
+   double diagnose_value = 107;
+   double sample_interval = 108;
+   double temp = 109;
+   double sound_velocity = 110;
+}
+
+message VirtualModuleSmoothSettlement{
+   double new_value = 101;
+   double t_value = 102;
+}
+
+message StrainData{
+   double strain = 101;
+}
+
+message StressGapData{
+   double stress = 101;
+}
+
+message GPSContData{
+   double x = 101;
+   double y = 102;
+   double z = 103;
+   double raw_x = 104;
+   double raw_y = 105;
+   double raw_z = 106;
+}
+
+message OtaRequirePiece{
+   string filename = 101;
+   int32 piece_num = 102;
+   int32 piece_size = 103;
+}
+
+message OtaAddFileState{
+   string filename = 101;
+   enum AFSRes {
+      STATE_RECOVERY = 0;
+      STATE_APPEND = 1;
+      STATE_ALREADY = 2;
+   }
+   AFSRes res = 102;
+}
+
+message OtaTransFileState{
+   string filename = 101;
+   enum TFSRes {
+      STATE_SUC = 0;
+      STATE_ALLCOM = 1;
+      STATE_ACTIVE = 2;
+      STATE_REACTIVE = 3;
+      STATE_RET = 4;
+      STATE_TERM = 5;
+      STATE_ABANDON = 6;
+      STATE_LOADADBS = 7;
+   }
+   TFSRes res = 102;
+   uint32 nretrans = 103;
+}
+
+message OtaLoadFileState{
+   string filename = 101;
+   enum LFSRes {
+      STATE_SUC = 0;
+      STATE_FAIL = 1;
+   }
+   LFSRes res = 102;
+}
+
+message OtaCancelFileState{
+   string filename = 101;
+   enum CFSRes {
+      STATE_SUC = 0;
+      STATE_NOEXIST = 1;
+   }
+   CFSRes res = 102;
+}
+
+message PeriodicUp{
+   string ccid = 101;
+   string imsi = 102;
+   string imei = 103;
+}
+
+message SystemBootInfo{
+   uint32 version = 101;
+   enum SBIRes {
+      SYS_POWERUP = 0;
+      SYS_BROWNOUT = 1;
+      SYS_WATCHDOG = 2;
+      SYS_ADBS_ACT = 3;
+      BUSI_NORMAL = 10;
+      BUSI_SAM_TIMEOUT = 11;
+      BUSI_BROWNOUT = 12;
+   }
+   SBIRes boot_src = 102;
+}
+
+message ServerAddressInfo{
+   repeated string server_address = 101;
+   uint32 signal_quality = 102;
+   string sim_imsi = 103;
+   string sim_imei = 104;
+   string sim_iccid = 105;
+}
+
+message UpNodeDataCRTX{
+   uint32 addr = 101;
+   uint32 pro_type = 102;
+   uint32 node_type = 103;
+   uint32 node_group = 104;
+}
+
+message InstructionInfoCRTX{
+   uint32 ins_version = 101;
+   uint32 ins_numbers = 102;
+}
+
+message NodeListCRTX{
+   repeated uint32 addr_list = 101;
+}
+
+message ErrorCodeCRTX{
+   uint32 err_code = 101;
+   string err_describe = 102;
+}
+
+message PressData{
+   double pressure = 1;
+}
+
+message VibraWireInfo{
+   uint32 ch0_midfreq = 101;
+   uint32 ch1_midfreq = 102;
+   uint32 ch2_midfreq = 103;
+   uint32 ch3_midfreq = 104;
+   uint32 ch4_midfreq = 105;
+   uint32 ch5_midfreq = 106;
+   uint32 ch6_midfreq = 107;
+   uint32 ch7_midfreq = 108;
+   uint32 ch8_midfreq = 109;
+   uint32 ch9_midfreq = 110;
+   uint32 ch10_midfreq = 111;
+   uint32 ch11_midfreq = 112;
+   uint32 ch12_midfreq = 113;
+   uint32 ch13_midfreq = 114;
+   uint32 ch14_midfreq = 115;
+   uint32 ch15_midfreq = 116;
+   uint32 ch16_midfreq = 117;
+}
+
+message MoistureData{
+   double moisture = 101;
+}
+
+message AlgorithmConfigInfo{
+   repeated double kn_0 = 101;
+   repeated double kn_1 = 102;
+   repeated double kn_2 = 103;
+   repeated uint32 peaks = 104;
+   uint32 pkt_num = 105;
+   uint32 seqno = 106;
+   int32 temp_grid = 107;
+   repeated double x_coef = 108;
+   repeated double y_coef = 109;
+}
+
+message PrecipitationData{
+   double precipitation = 101;
+   double instantaneousPrecipitation = 102;
+   double yesterday_rainfall_in_1tenth = 103;
+   double total_rainfall_in_1tenth = 104;
+   double hourly_rainfall_in_1tenth = 105;
+   double lasthour_rainfall_in_1tenth = 106;
+   double max_rainfall_24h_in_1tenth = 107;
+   uint32 max_rainfall_24h_slot_start_in_hour = 108;
+   uint32 max_rainfall_24h_slot_end_in_hour = 109;
+   double min_rainfall_24h_in_1tenth = 110;
+   uint32 min_rainfall_24h_slot_start_in_hour = 111;
+   uint32 min_rainfall_24h_slot_end_in_hour = 112;
+}
+
+message TimeSyncInfo{
+   uint32 is_sync = 101;
+   uint32 is_sync_need = 102;
+   uint32 sync_interval = 103;
+   uint32 sync_timeout_period = 104;
+}
+
+message ErrorMessage{
+   uint32 err_no = 101;
+}
+
+message InclinometerData{
+   double x = 101;
+   double y = 102;
+}
+
+message CablePeaksDataV2{
+   string axis = 101;
+   double freq = 102;
+   string odr = 103;
+   string range = 104;
+   double cable = 105;
+   uint32 point_width = 106;
+   uint32 id = 107;
+   repeated float f_value = 108;
+   double t_cable = 109;
+   repeated uint32 peaks_res = 110;
+   repeated uint32 peaks_cali = 111;
+}
+
+message TrafficFlowData{
+   uint32 lane_id = 101;
+   uint32 traffic_flow = 102;
+   double lane_holdrate = 103;
+   double average_speed = 104;
+   double average_headDistance = 105;
+   uint32 start_time = 106;
+   uint32 stop_time = 107;
+   uint32 car_typetotal = 108;
+   uint32 car_queuelength = 109;
+   int32 head_distance = 110;
+   double room_rate = 111;
+   string run_state = 112;
+   string lane_name = 113;
+   uint32 scene_id = 114;
+   uint32 unknown_type = 115;
+   uint32 hatchback_car = 116;
+   uint32 saloon = 117;
+   uint32 coupe = 118;
+   uint32 compact = 119;
+   uint32 mini = 120;
+   uint32 MPV = 121;
+   uint32 SUV = 122;
+   uint32 large_bus = 123;
+   uint32 medium_bus = 124;
+   uint32 van = 125;
+   uint32 microvan = 126;
+   uint32 HGV = 127;
+   uint32 medium_truck = 128;
+   uint32 tank_truck = 129;
+   uint32 crane = 130;
+   uint32 muck_car = 131;
+   uint32 buggy = 132;
+   uint32 pickup_trunk = 133;
+   uint32 micro_trunk = 134;
+   uint32 motorcycle = 135;
+   uint32 tricycle = 136;
+   uint32 SUV_MPV = 137;
+   uint32 trailer = 138;
+   uint32 large_car = 139;
+   uint32 medium_car = 140;
+   uint32 super_car = 141;
+   uint32 small_car = 142;
+}
+
+message GPSInfo{
+   double latitude = 101;
+   double longitude = 102;
+}
+
+message UltrahighFreqData{
+   repeated float data = 101;
+   double freq = 102;
+   uint32 pkt_num = 103;
+   uint32 seqno = 104;
+   string odr = 105;
+}
+
+message TotalStationData{
+   double x = 101;
+   double y = 102;
+   double z = 103;
+}
+
+message VirtualModuleVibraWire{
+   double freq = 101;
+   double temp = 102;
+   int32 db = 103;
+   double data = 104;
+   double voltage = 105;
+   double sample_interval = 106;
+   int32 addr = 107;
+}
+
+message VirtuaVibraCableData{
+   repeated double freq_point = 101;
+   double tension = 102;
+   repeated double damping_ratio = 103;
+   double rms = 104;
+   repeated double features = 105;
+}
+
+message PressContData{
+   double pressure = 101;
+   double sample_interval = 102;
+}
+
+message VirtualModalAnalysisData{
+   double freq = 101;
+   double damp = 102;
+}
+
+message VirtualCorrelationAnalysisData{
+   double correlationCoefficient = 101;
+}
+
+message AcousticEmissionSensor{
+   double amp = 101;
+   double power = 102;
+   double asl = 103;
+   double rms = 104;
+   double ringing = 105;
+   double rising = 106;
+   double risingtime = 107;
+   double duringtime = 108;
+   double arrivingsec = 109;
+   double arrivingns = 110;
+}
+
+message SPRSSubDeviceData{
+   string msg_type_id = 101;
+   int32 device_addr = 102;
+   bytes msg_payload = 103;
+}
+
+message SPRSBspInfo{
+   enum Baud {
+      bps4800 = 0;
+      bps9600 = 1;
+      bps38400 = 2;
+      bps57600 = 3;
+      bps115200 = 4;
+   }
+   Baud baud = 101;
+   enum PowerStatus {
+      POWER_ON = 0;
+      POWER_OFF = 1;
+      POWER_AUTO = 2;
+   }
+   PowerStatus power_status = 102;
+}
+
+message SPRSInsBriefInfo{
+   string ins_cfg_id = 101;
+}
+
+message SPRSClockTaskCfg{
+   int32 clock_num = 101;
+   string ins_list_id = 102;
+   repeated int32 device_list = 103;
+}
+
+message SPRSClockTaskInfo{
+   repeated SPRSClockTaskCfg cfg_list = 101;
+}
+
+message ThresholdCfg{
+   string msg_type_id = 101;
+   int32 field_id = 102;
+   double threshold = 103;
+   enum TriggerType {
+      UPPER = 0;
+      LOWER = 1;
+   }
+   TriggerType trigger_type = 104;
+}
+
+message SPRSTriggerCfg{
+   repeated ThresholdCfg cfg_list = 101;
+}
+
+message WeightingDataNew{
+   string LaneID = 101;
+   double Speed = 102;
+   double GrossLoad = 103;
+   double AxleCount = 104;
+   double AxleLoad1 = 105;
+   double AxleLoad2 = 106;
+   double AxleLoad3 = 107;
+   double AxleLoad4 = 108;
+   double AxleLoad5 = 109;
+   double AxleLoad6 = 110;
+   double AxleLoad7 = 111;
+   double AxleLoad8 = 112;
+   double AxleSpacing1 = 113;
+   double AxleSpacing2 = 114;
+   double AxleSpacing3 = 115;
+   double AxleSpacing4 = 116;
+   double AxleSpacing5 = 117;
+   double AxleSpacing6 = 118;
+   double AxleSpacing7 = 119;
+}
+
+message VirtualWindSpeedDirectionData{
+   double wind_speed = 101;
+   double wind_direction = 102;
+}
+
+message VibraWireParaInfo{
+   int32 ch_num = 101;
+   double ch_k = 102;
+   double ch_F0 = 103;
+   double ch_b = 104;
+   double ch_T0 = 105;
+   double ch_Q = 106;
+   double ch_thres = 107;
+}
+
+message SensorInsInfo{
+   repeated string sensor_ins_list = 101;
+}
+
+message SensorMsgInfo{
+   repeated string sensor_msg_list = 101;
+}
+
+message WeatherData{
+   double air_density = 101;
+   double specific_enthalpy = 102;
+   double relative_humidity = 103;
+   double ambient_temperature = 104;
+   double dewpoint_temperature = 105;
+   double atmospheric_pressure = 106;
+   double wind_speed = 107;
+   double wind_direction = 108;
+   double wind_chill_temperature = 109;
+   double precipitation_intensity = 110;
+   enum PrecipitationType {
+      NONE = 0;
+      UNKNOWN = 40;
+      RAINING = 60;
+      SNOWING = 70;
+   }
+   PrecipitationType precipitation_type = 111;
+   uint32 weather_date = 112;
+   string weather_text_day = 113;
+   int32 weather_code_day = 114;
+   string weather_text_night = 115;
+   int32 weather_code_night = 116;
+   double temperature_high = 117;
+   double temperature_low = 118;
+   double precipitation_probability = 119;
+   string wind_direction_text = 120;
+   int32 wind_scale = 121;
+   double precipitation_in_day = 122;
+}
+
+message RoadSurfaceData{
+   double friction = 101;
+   double temperature = 102;
+   double water_film_height = 103;
+   enum SurfaceCondition {
+      DRY = 0;
+      DAMP = 1;
+      MOIST = 2;
+      DAMP_SALT = 3;
+      MOIST_SALT = 4;
+      SEEPER = 5;
+      SNOW = 10;
+      FROST = 11;
+      WATER_ICE = 12;
+      FROZEN = 20;
+   }
+   SurfaceCondition condition = 104;
+}
+
+message DurabilityData{
+   double voltage = 101;
+   double current = 102;
+   double resistance = 103;
+   double temperature = 104;
+}
+
+message VirtualLastRainPrecipitation{
+   uint32 unix_time_begin = 101;
+   uint32 unix_time_end = 102;
+   double total_precipitation_in_mm = 103;
+}
+
+message VirtualTanAngle{
+   double tan_angle = 101;
+   double speed = 102;
+   double speed_inc = 103;
+   double speed_acce = 104;
+   double displacement = 105;
+}
+
+message VirtualSideslopeKriging{
+   double mux_e = 101;
+   double sigmax_e = 102;
+   double mux_c = 103;
+   double sigmax_c = 104;
+   double mux_phi = 105;
+   double sigmax_phi = 106;
+}
+
+message VirtualAlertLevel{
+   uint32 level = 101;
+}
+
+message VirtualWeatherForecast{
+   double precipitation_per_hour_in_mm = 101;
+   uint32 forecast_time_in_sec = 102;
+}
+
+message SetRfChannelInfo{
+   int32 rf_channel = 1;
+}
+
+message GetCablePeaksSampleData{
+   int32 odr = 1;
+   int32 range = 2;
+   int32 axis = 3;
+}
+
+message GetVibSampleData{
+   int32 odr = 1;
+   int32 range = 2;
+   int32 axis = 3;
+   int32 period = 4;
+   int32 def = 101;
+}
+
+message GetVibraWireSampleData{
+   int32 channel_bit = 1;
+   int32 sample_pattern = 2;
+   int32 local_channel_bit = 3;
+   int32 ext_channel_bit = 4;
+}
+
+message GetElectricityHIS100{
+   int32 channel_bit = 1;
+   int32 odr = 2;
+   int32 period = 3;
+   int32 is_continuous = 4;
+   int32 is_out_power = 5;
+   int32 is_factory_init = 6;
+   int32 is_user_init = 7;
+}
+
+message GetStressHIS300{
+   int32 channel = 1;
+   int32 odr = 2;
+   int32 period = 3;
+   int32 is_continuous = 4;
+}
+
+message GetStressHIS500{
+   double k_value = 1;
+   int32 odr = 2;
+   int32 period = 3;
+}
+
+message GetPressHGR100B2{
+   int32 sample_pattern = 1;
+}
+
+message GetAnemometerFC307{
+   int32 addr = 1;
+}
+
+message GetMonitorIncliHCF420{
+   int32 response_time = 1;
+   int32 sample_interval = 2;
+   double angle_threshold_1 = 3;
+   double angle_threshold_2 = 4;
+   double angle_threshold_3 = 5;
+   int32 group = 6;
+}
+
+message SetMainDirectionInclination{
+   int32 main_direction = 1;
+}
+
+message ConfigClockTask{
+   int32 is_on_1 = 1;
+   int32 hour_1 = 2;
+   int32 minute_1 = 3;
+   int32 second_1 = 4;
+   int32 interval_1 = 5;
+   int32 number_1 = 6;
+   int32 is_on_2 = 7;
+   int32 hour_2 = 8;
+   int32 minute_2 = 9;
+   int32 second_2 = 10;
+   int32 interval_2 = 11;
+   int32 number_2 = 12;
+   int32 odr = 13;
+   int32 range = 14;
+   int32 axis = 15;
+   int32 period = 16;
+   int32 def_sample_type = 17;
+   int32 channel_bit = 18;
+   int32 sample_pattern = 19;
+   int32 is_continuous = 20;
+   int32 is_out_power = 21;
+   int32 is_factory_init = 22;
+   int32 is_user_init = 23;
+   double k_value = 24;
+   int32 local_channel_bit = 25;
+   int32 ext_channel_bit = 26;
+   int32 odr_s = 27;
+   int32 range_s = 28;
+   int32 axis_s = 29;
+   int32 period_s = 30;
+   int32 def_sample_type_s = 31;
+   int32 channel_bit_s = 32;
+   int32 sample_pattern_s = 33;
+   int32 is_continuous_s = 34;
+   int32 is_out_power_s = 35;
+   int32 is_factory_init_s = 36;
+   int32 is_user_init_s = 37;
+   double k_value_s = 38;
+   int32 local_channel_bit_s = 39;
+   int32 ext_channel_bit_s = 40;
+   int32 running_mode = 41;
+   int32 analog_sample_type = 42;
+   int32 clock_num = 101;
+   int32 running_mode_s = 102;
+   int32 def = 103;
+   int32 def_s = 104;
+   int32 is_on = 105;
+   int32 hour = 106;
+   int32 minute = 107;
+   int32 second = 108;
+   int32 interval = 109;
+   int32 number = 110;
+   enum SampleodrSCD1F1 {
+      odr_9600Hz = 0;
+      odr_4800Hz = 1;
+      odr_2400Hz = 2;
+   }
+   SampleodrSCD1F1 odrSCD1F1 = 111;
+   uint32 is_on_trigger = 112;
+   double threshold = 113;
+   uint32 listen_interval = 114;
+   uint32 alarm_num = 115;
+   uint32 alarm_interval = 116;
+   uint32 send_interval = 117;
+   uint32 is_on_x = 118;
+   uint32 is_on_y = 119;
+   uint32 is_on_absolute = 120;
+   double threshold_x = 121;
+   double threshold_y = 122;
+   double threshold_absolute = 123;
+   int32 schedule_id = 124;
+}
+
+message SetTriggerConfigInfo{
+   int32 is_set_trigger = 1;
+   int32 monitor_odr = 2;
+   int32 monitor_axis = 3;
+   int32 trigger_odr = 4;
+   int32 trigger_axis = 5;
+   int32 trigger_range = 6;
+   double trigger_sensitivity = 7;
+   double trigger_threshold = 8;
+   int32 trigger_period = 9;
+}
+
+message SimpleSampleHIS700{
+   int32 disconnect_timeout = 1;
+}
+
+message OnceInstructionHIS700{
+   int32 addr = 1;
+   int32 disconnect_timeout = 2;
+}
+
+message TwiceInstructionHIS700{
+   int32 addr = 1;
+   int32 disconnect_timeout = 2;
+   int32 sample_collect_interval = 3;
+}
+
+message HIS700AutoSample{
+   int32 is_on = 1;
+   int32 sample_collect_interval = 2;
+   int32 auto_sample_interval = 3;
+   int32 disconnect_timeout = 4;
+}
+
+message SetStdNodeHGR100B2{
+   int32 reference_node = 1;
+}
+
+message SetBaudrateHIS700{
+   int32 baudrate = 1;
+}
+
+message SetChannelConfigHFS316{
+   int32 channel_config_bit = 1;
+}
+
+message GetGatewayCtrlInfo{
+   string command = 101;
+}
+
+message AddCalibrationHCF2000{
+   double temp = 1;
+   double offset = 2;
+}
+
+message RegistryOpHCF700HGR100B2{
+   int32 addr = 1;
+}
+
+message SetHoldRegHCF700HGR100B2{
+   int32 dest_addr = 1;
+   int32 set_addr = 2;
+   int32 channel_bit = 3;
+   double init_value = 4;
+   double density = 5;
+   double g_value = 6;
+   double full_adc_value = 7;
+   double zero_adc_value = 8;
+   double full_sensor_value = 9;
+}
+
+message SetIncliCalibration{
+   int32 incli_marked = 1;
+   int32 main_direction = 2;
+   sint32 origin_x = 3;
+   sint32 origin_y = 4;
+   sint32 origin_z = 5;
+}
+
+message SetChannelFreqInfo{
+   repeated double channel_freq = 1;
+}
+
+message SetChannelConfigHIS100{
+   int32 channel1_config = 1;
+   int32 channel2_config = 2;
+   int32 channel3_config = 3;
+   int32 channel4_config = 4;
+}
+
+message SetCaliHIS100{
+   int32 channel_bit = 1;
+   int32 number = 2;
+   sint32 sensor_data = 3;
+   sint32 standard_data = 4;
+}
+
+message RemoveCaliHIS100{
+   int32 channel_bit = 1;
+}
+
+message ChangeInstructionHIS700{
+   int32 main_type = 1;
+   int32 sub_type = 2;
+   int32 disconnect_timeout = 3;
+   int32 is_operate_eeprom = 4;
+   int32 is_write = 5;
+   int32 is_sample_instruct = 6;
+   int32 instruct_length = 7;
+   repeated int32 instruct = 8;
+}
+
+message ChangeNodeWhiteListTransNode{
+   repeated int32 serial_number = 1;
+}
+
+message CloseWhiteListTransNode{
+   int32 close_flag = 1;
+}
+
+message AddNodeRSUC{
+   int32 sample_ins_type = 1;
+   int32 product_ins_type = 2;
+   int32 product_type = 3;
+   int32 node_type = 4;
+   int32 node_num = 5;
+   repeated int32 addr = 6;
+}
+
+message AddOneInsRSUC{
+   int32 product_ins_type = 1;
+   int32 product_type = 2;
+   int32 ins_len = 3;
+   repeated int32 ins = 4;
+}
+
+message AddTwoInsRSUC{
+   int32 product_ins_type = 1;
+   int32 product_type = 2;
+   int32 sample_ins_len = 3;
+   int32 retrieve_ins_len = 4;
+   repeated int32 ins = 5;
+}
+
+message DeleteNodeInfoRSUC{
+   int32 addr = 1;
+}
+
+message DeleteInstructionRSUC{
+   int32 product_type = 1;
+}
+
+message SetSampleParameterRSUC{
+   int32 pow_on_interval = 1;
+   int32 retrieve_interval = 2;
+   int32 product_pow_sup_mode = 3;
+   int32 product_pow_sup_vol = 4;
+}
+
+message TransparentInstructionRSUC{
+   int32 product_type = 1;
+   int32 product_ins_type = 2;
+   int32 data_len = 3;
+   repeated int32 data = 4;
+}
+
+message GetSampleDataRSUC{
+   int32 addr = 1;
+   int32 sample_ins_type = 2;
+   int32 product_ins_type = 3;
+   int32 product_type = 4;
+}
+
+message GetAnalogDataALUC{
+   int32 analog_sample_type = 1;
+   int32 odr = 2;
+   int32 period = 3;
+}
+
+message SetCalibrationALUC{
+   int32 analog_sample_type = 1;
+}
+
+message SetSensorConfigHIS400{
+   int32 k_value = 1;
+   int32 s_value = 2;
+}
+
+message GetStressData{
+   int32 odr = 1;
+}
+
+message GetRS485DataRSUCCont{
+   int32 odr = 1;
+   int32 period = 2;
+}
+
+message SetSampleMode{
+   int32 sample_mode = 1;
+}
+
+message SetTransMode{
+   int32 send_mode = 1;
+}
+
+message SetTriggerConfig{
+   int32 wind_threshold = 1;
+   int32 wind_debounce = 2;
+}
+
+message OtaReceivePiece{
+   string filename = 101;
+   int32 piece_num = 102;
+   int32 piece_size = 103;
+   string piece_data = 104;
+}
+
+message OtaAddFile{
+   string filename = 101;
+   int32 filesize = 102;
+   int32 is_load = 103;
+}
+
+message OtaCancelFile{
+   string filename = 101;
+}
+
+message SetAlgorithmConfig{
+   repeated double kn_0 = 101;
+   repeated double kn_1 = 102;
+   repeated double kn_2 = 103;
+   repeated uint32 peaks = 104;
+   uint32 axis = 105;
+   int32 temp_grid = 106;
+}
+
+message ServerAddress{
+   string server_address = 101;
+}
+
+message SetMQTTParameter{
+   string user_name = 101;
+   string password = 102;
+}
+
+message DownNodeDataCRTX{
+   uint32 addr = 101;
+   uint32 pro_type = 102;
+   uint32 node_type = 103;
+   uint32 node_group = 104;
+}
+
+message ConfigVibraWireParameter{
+   uint32 ch0_midfreq = 101;
+   uint32 ch1_midfreq = 102;
+   uint32 ch2_midfreq = 103;
+   uint32 ch3_midfreq = 104;
+   uint32 ch4_midfreq = 105;
+   uint32 ch5_midfreq = 106;
+   uint32 ch6_midfreq = 107;
+   uint32 ch7_midfreq = 108;
+   uint32 ch8_midfreq = 109;
+   uint32 ch9_midfreq = 110;
+   uint32 ch10_midfreq = 111;
+   uint32 ch11_midfreq = 112;
+   uint32 ch12_midfreq = 113;
+   uint32 ch13_midfreq = 114;
+   uint32 ch14_midfreq = 115;
+   uint32 ch15_midfreq = 116;
+   uint32 ch16_midfreq = 117;
+}
+
+message SetTriggerSampleConfig{
+   uint32 vibra_debounce = 101;
+   uint32 vibra_threshold_x = 102;
+   uint32 vibra_threshold_y = 103;
+   uint32 vibra_threshold_z = 104;
+}
+
+message ConfigTimeSyncParameter{
+   uint32 is_sync_need = 101;
+   uint32 sync_interval = 102;
+   uint32 sync_timeout_period = 103;
+}
+
+message SetADCGain{
+   enum ADC_gain {
+      gain_1x = 0;
+      gain_2x = 1;
+      gain_4x = 2;
+      gain_8x = 3;
+      gain_16x = 4;
+      gain_32x = 5;
+      gain_64x = 6;
+      gain_128x = 7;
+   }
+   ADC_gain adc_gain = 101;
+}
+
+message SetAnalogGain{
+   double analog_gain = 101;
+}
+
+message SetTriggerSampleConfigHCF4000{
+   int32 incli_threshold = 1;
+   int32 incli_debounce = 2;
+   int32 cable_threshold = 3;
+   int32 vibra_debounce = 4;
+   int32 vibx_threshold = 5;
+   int32 viby_threshold = 6;
+   int32 vibz_threshold = 7;
+}
+
+message SetBaudSPRS{
+   enum Baud {
+      bps4800 = 0;
+      bps9600 = 1;
+      bps38400 = 2;
+      bps57600 = 3;
+      bps115200 = 4;
+   }
+   Baud baud = 101;
+}
+
+message SetPowerStatusSPRS{
+   enum PowerStatus {
+      POWER_ON = 0;
+      POWER_OFF = 1;
+      POWER_AUTO = 2;
+   }
+   PowerStatus power_status = 101;
+}
+
+message SetTransparentInsSPRS{
+   string up_msg_type_id = 101;
+   int32 recv_timeout_in_ms = 102;
+   bytes ins_payload = 103;
+}
+
+message SetSPRSClockTask{
+   repeated SPRSClockTaskCfg cfg_list = 101;
+}
+
+message SetSPRSTrigger{
+   repeated ThresholdCfg cfg_list = 101;
+}
+
+message ConfigVibraWirePara{
+   repeated VibraWireParaInfo para_list = 101;
+}
+
+message InitVibraWire{
+   int32 init_ins = 101;
+   int32 Init_local_channel = 102;
+   int32 Init_ext_channel = 103;
+}

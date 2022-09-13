@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package BatchMessages;
+
+option java_package = "com.smartbow.proto.batchmessages";
+option go_package = ".;BatchMessages";
+
+message BatchMessages {
+  string packet_name = 1;
+  string node_id = 2;
+  string gateway_id = 3;
+  uint32 unix_time = 4;
+  int32 microsecond = 5;
+  string channel = 6;
+  double freq = 7;
+  repeated float data = 8;
+  uint32 pkt_num = 9;
+  uint32 seqno = 10;
+  string odr = 11;
+}

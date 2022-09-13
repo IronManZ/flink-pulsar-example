@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ComputeEngine;
+
+import "GroupedMessage.proto";
+import "SensorUpMessage.proto";
+
+//golang结果的编译路径为${go_out}/./ComputeEngine,命名空间为ComputeEngine
+option go_package = ".;ComputeEngine";
+option java_package = "com.smartbow.proto.ComputeEngine";
+//计算引擎服务的接口
+service ComputeEngineService {
+    rpc GetComputeResultMessage (GroupedMessage.GroupedMessage) returns (SensorMessages.SensorUpMessage);
+}

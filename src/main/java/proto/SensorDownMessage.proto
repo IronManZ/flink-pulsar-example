@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+option java_package = "com.smartbow.sensormessages";
+option go_package = ".;SensorMessages";
+
+
+package SensorMessages;
+
+import "SensorMessages/SensorMessages.proto";
+
+message SensorDownMessage {
+  string instruction_name = 1;
+  string gateway_id = 2;
+  int32 node_id = 3;
+  string user_id = 4;
+  uint32 unix_time = 5;
+  string instruction_id = 6;
+  map<string,string> meta_data = 7;
+  string token = 8;
+
+  oneof msg {
+    SetRfChannelInfo setrfchannelinfo = 20;
+    GetCablePeaksSampleData getcablepeakssampledata = 21;
+    GetVibSampleData getvibsampledata = 22;
+    GetVibraWireSampleData getvibrawiresampledata = 23;
+    GetElectricityHIS100 getelectricityhis100 = 24;
+    GetStressHIS300 getstresshis300 = 25;
+    GetStressHIS500 getstresshis500 = 26;
+    GetPressHGR100B2 getpresshgr100b2 = 27;
+    GetAnemometerFC307 getanemometerfc307 = 28;
+    GetMonitorIncliHCF420 getmonitorinclihcf420 = 29;
+    SetMainDirectionInclination setmaindirectioninclination = 30;
+    ConfigClockTask configclocktask = 31;
+    SetTriggerConfigInfo settriggerconfiginfo = 32;
+    SimpleSampleHIS700 simplesamplehis700 = 33;
+    OnceInstructionHIS700 onceinstructionhis700 = 34;
+    TwiceInstructionHIS700 twiceinstructionhis700 = 35;
+    HIS700AutoSample his700autosample = 36;
+    SetStdNodeHGR100B2 setstdnodehgr100b2 = 37;
+    SetBaudrateHIS700 setbaudratehis700 = 38;
+    SetChannelConfigHFS316 setchannelconfighfs316 = 39;
+    GetGatewayCtrlInfo getgatewayctrlinfo = 40;
+    AddCalibrationHCF2000 addcalibrationhcf2000 = 41;
+    RegistryOpHCF700HGR100B2 registryophcf700hgr100b2 = 42;
+    SetHoldRegHCF700HGR100B2 setholdreghcf700hgr100b2 = 43;
+    SetIncliCalibration setinclicalibration = 44;
+    SetChannelFreqInfo setchannelfreqinfo = 45;
+    SetChannelConfigHIS100 setchannelconfighis100 = 46;
+    SetCaliHIS100 setcalihis100 = 47;
+    RemoveCaliHIS100 removecalihis100 = 48;
+    ChangeInstructionHIS700 changeinstructionhis700 = 49;
+    ChangeNodeWhiteListTransNode changenodewhitelisttransnode = 50;
+    CloseWhiteListTransNode closewhitelisttransnode = 51;
+    AddNodeRSUC addnodersuc = 52;
+    AddOneInsRSUC addoneinsrsuc = 53;
+    AddTwoInsRSUC addtwoinsrsuc = 54;
+    DeleteNodeInfoRSUC deletenodeinforsuc = 55;
+    DeleteInstructionRSUC deleteinstructionrsuc = 56;
+    SetSampleParameterRSUC setsampleparameterrsuc = 57;
+    TransparentInstructionRSUC transparentinstructionrsuc = 58;
+    GetSampleDataRSUC getsampledatarsuc = 59;
+    GetAnalogDataALUC getanalogdataaluc = 60;
+    SetCalibrationALUC setcalibrationaluc = 61;
+    SetSensorConfigHIS400 setsensorconfighis400 = 62;
+    GetStressData getstressdata = 63;
+    GetRS485DataRSUCCont getrs485datarsuccont = 64;
+    SetSampleMode setsamplemode = 65;
+    SetTransMode settransmode = 66;
+    SetTriggerConfig settriggerconfig = 67;
+    OtaReceivePiece otareceivepiece = 68;
+    OtaAddFile otaaddfile = 69;
+    OtaCancelFile otacancelfile = 70;
+    SetAlgorithmConfig setalgorithmconfig = 71;
+    ServerAddress serveraddress = 72;
+    SetMQTTParameter setmqttparameter = 73;
+    DownNodeDataCRTX downnodedatacrtx = 74;
+    ConfigVibraWireParameter configvibrawireparameter = 75;
+    SetTriggerSampleConfig settriggersampleconfig = 76;
+    ConfigTimeSyncParameter configtimesyncparameter = 77;
+    SetADCGain setadcgain = 78;
+    SetAnalogGain setanaloggain = 79;
+    SetTriggerSampleConfigHCF4000 settriggersampleconfighcf4000 = 80;
+    SetBaudSPRS setbaudsprs = 81;
+    SetPowerStatusSPRS setpowerstatussprs = 82;
+    SetTransparentInsSPRS settransparentinssprs = 83;
+    SetSPRSClockTask setsprsclocktask = 84;
+    SetSPRSTrigger setsprstrigger = 85;
+    ConfigVibraWirePara configvibrawirepara = 86;
+    InitVibraWire initvibrawire = 87;
+  }
+}

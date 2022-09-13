@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package GroupedMessage;
+
+import "SensorUpMessage.proto";
+
+//golang结果的编译路径为${go_out}/./GroupedMessage,命名空间为GroupedMessage
+option go_package = ".;GroupedMessage";
+option java_package = "com.smartbow.proto.GroupedMessage";
+message GroupedMessage {
+    string project_name = 1;
+    string module_name = 2;
+    string master_id = 3;   //主体，计算引擎中表示测点，事件引擎中表示事件规则id
+    repeated SensorMessages.SensorUpMessage group = 4;
+    uint64 restore_areatime = 5; //上下限阈值算法：已满足上下限的持续时间，单位ms 弃用
+    uint32 last_unix_time = 6;   //上下限阈值算法：已满足上下限的数据窗口,最后数据点的时间戳,单位s 弃用
+    int32 last_microsecond = 7;  //上下限阈值算法：已满足上下限的数据窗口,最后数据点的时间戳,单位微妙 弃用
+    string task_id = 8; //重算任务编号
+    map<string, double> params = 9; //提供给无状态服务的参数map
+}

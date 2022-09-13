@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package SensorMessages;
+
+// golang编译结果路径${go_out}/./SensorMessages/,命名空间：SensorMessages
+option go_package = ".;SensorMessages";
+option java_package = "com.smartbow.proto.SensorMessages";
+
+message SensorAckMessage {
+    enum ErrCode {
+        CODE_SUCCESS = 0;
+        CODE_FAIL = 1;   //Generic condition: backwards compatible
+        CODE_ESIZE = 2;  //Parameter passed in was too big
+        CODE_ECANCEL = 3;    //Operation canceled by a call
+        CODE_EOFF = 4;   //Subsystem is not active
+        CODE_EBUSY = 5;  //The underlying system is busy; retry later
+        CODE_EINVAL = 6; //An invalid parameter was passed
+        CODE_ERETRY = 7;     //A rare and transient failure: can retry
+        CODE_ERSERVE = 8;    //Reservation required before usage
+        CODE_EALREADY = 9;   //The device state you are requesting is already set
+        CODE_ENOMEM = 10;    //Memory required not available
+        CODE_ENOACK = 11;    //A packet was not ackonwledged
+        // reserved 12 to 15;  //1-11为传感网的错误码，12-15保留字段用作传感错误类型的扩展
+        CODE_TIME_OUT = 16;  //指令执行超时
+        CODE_UNCONNECT_ROUTER = 17;  //目标网关未连接SensorRouter
+        CODE_INVAL_MESSAGE = 18; //message未非法消息，缺少字段或者参数错误
+        CODE_DEVICE_BUSY = 19;   //设备繁忙，该设备指令队列中有未执行的下行指令
+        CODE_EMPTY_ERR = 20;   //表示没有添加任何的节点或者指令,e.g. HIS900使用
+        CODE_ADD_NODE_FAIL = 21;     //添加节点失败，e.g. HIS900添加节点数不在0-25内
+        CODE_EMPTY_INS_ERR = 22;     //没有添加任何的指令，也会报该问题. e.g. HIS900
+        CODE_LACK_ANYONE_INS_ERR = 23;    //缺少某条指令，e.g. HIS900
+        CODE_NULL_INS_ERR = 24;     //该产品类型没有添加该条指令，请查询指令信息. e.g. HIS900
+        CODE_NONE_NODE_ERR = 25; //总线上不存在该地址的设备，e.g. HIS900
+        CODE_NONE_TYPE_ERR = 26;  //产品类型不存在，e.g. HIS900
+        CODE_INS_TOO_LONG_ERR = 27;     //指令过长  e.g. HIS900
+        CODE_LACK_MEM_ERR = 28;     //存储空间不足  e.g. HIS900
+        CODE_GET_INFO_FAIL = 29;  //采样失败，e.g. HIS900从机采样失败，没有反应
+        CODE_SERVER_RESPONSE_ERR = 101;  //服务端响应错误，e.g. 服务端发送Kafka失败
+        CODE_PERMISSION_DENIED = 102; //没有权限
+    }
+
+    string instruction_name = 1;    //下行指令的指令名
+    string packet_name = 2; //ack 包名
+    string gateway_id = 3;
+    int32 node_id = 4;
+    uint32 unix_time = 5;
+    ErrCode err_code = 6;
+    string comment = 7; //用于网关回复消息
+    string instruction_id = 8;  //指令ID
+}

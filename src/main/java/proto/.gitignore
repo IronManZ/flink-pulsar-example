@@ -1,0 +1,10 @@
+__pycache__/
+target/
+.history
+/.vscode/
+/test
+/protofiles
+wsn-data
+MessageProto
+.Rebuild/
+.idea/

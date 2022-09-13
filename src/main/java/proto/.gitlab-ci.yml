@@ -1,0 +1,119 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: none
+
+stages:
+  - check
+  - trigger_pipeline
+  - trigger_pipeline_dev
+  - dynamic_proto
+
+build_proto:
+  stage: check
+  image: docker-registry.thunics.org:5000/bstack2proto3:v1.2.3
+  script:
+    - export COMPILE_PATH=.Rebuild
+    - mkdir ${COMPILE_PATH}
+    - cd ${COMPILE_PATH}
+    - echo "MessageProto branch:${CI_COMMIT_REF_NAME}"
+    - git clone -b ${CI_COMMIT_REF_NAME} http://git.thunics.org/dp/MessageProto.git
+    - git clone -b master http://git.thunics.org/embedded/wsn-data.git
+    - /home/work/bstack2proto3/BStack2Proto3 > result.txt
+    - RESULT=`awk '$1 ~ /congratulation/ {print "yes"}' result.txt`
+    - if [ "${RESULT}" == "yes" ]; then echo "MessageProto check success"; else echo "MessageProto check failed"; cat result.txt; exit 1; fi
+    - cd MessageProto
+    - enable_commit=`git status|awk '$0 ~ /nothing to commit, working tree clean/ {print "no"}'`
+    - if [ "${enable_commit}" != "no" ]; then git add .; git commit -m "update:update proto --user=robot"; git push; fi
+    - cd ../..
+    - rm -rf ${COMPILE_PATH}
+  only:
+    - master
+    - develop
+    - tags
+  tags:
+    - gitlab-runner-db-test01
+
+trigger_robot:
+  stage: trigger_pipeline
+  before_script:
+    - sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+    - apk add --no-cache curl
+  script:
+    - echo "trigger MQTT2Pulsar update MessageProto..."
+    - curl -X POST -F token=b48ccbf57b8f58369ba3b3e3657181 -F ref=master http://git.thunics.org/api/v4/projects/742/trigger/pipeline
+    - echo "trigger SensorRouterPlus update MessageProto..."
+    - curl -X POST -F token=ae550f9b5c0beb5a26a75b0199ab3b -F ref=master http://git.thunics.org/api/v4/projects/452/trigger/pipeline
+    - echo "trigger DataPlatformScheduler update MessageProto..."
+    - curl -X POST -F token=26c1794e463676f5fabf01a31f63bb -F ref=master http://git.thunics.org/api/v4/projects/505/trigger/pipeline
+    - echo "trigger GoGateway2Project update MessageProto..."
+    - curl -X POST -F token=07ca976f5b9cfa54ce8beebe662590 -F ref=master http://git.thunics.org/api/v4/projects/611/trigger/pipeline
+    - echo "trigger GoRealTimeStreams update MessageProto..."
+    - curl -X POST -F token=25d5649e41c37ab168d0ca8dfa47e0 -F ref=master http://git.thunics.org/api/v4/projects/752/trigger/pipeline
+    - echo "trigger GoDataStreamToClickhouse update MessageProto..."
+    - curl -X POST -F token=5e96dd3ac66d5c386f7ef5b05d067e -F ref=master http://git.thunics.org/api/v4/projects/771/trigger/pipeline
+    - echo "trigger ClickhouseAPI update MessageProto..."
+    - curl -X POST -F token=98579274c917242e53016fb43977a7 -F ref=master http://git.thunics.org/api/v4/projects/535/trigger/pipeline
+  only:
+    - master
+    - tags
+  when: manual
+  tags:
+    - gitlab-runner-db-test01
+
+trigger_robot_dev:
+  stage: trigger_pipeline_dev
+  before_script:
+    - sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+    - apk add --no-cache curl
+  script:
+    - echo "trigger MQTT2Pulsar update MessageProto.. http://git.thunics.com/dp/DataPlatformConnector/pipelines"
+    - echo "jenkins.. http://bigjenkins.thunics.org/job/dp-mqtt-to-pulsar/"
+    - curl -X POST -F token=b48ccbf57b8f58369ba3b3e3657181 -F ref=develop http://git.thunics.org/api/v4/projects/742/trigger/pipeline
+    - echo "trigger SensorRouterPlus update MessageProto.. http://git.thunics.com/software/sensorrouterplus/pipelines"
+    - echo "jenkins.. http://bigjenkins.thunics.org/job/dp-sensorrouterplus"
+    - curl -X POST -F token=ae550f9b5c0beb5a26a75b0199ab3b -F ref=develop http://git.thunics.org/api/v4/projects/452/trigger/pipeline
+    - echo "trigger DataPlatformScheduler update MessageProto..."
+    - curl -X POST -F token=26c1794e463676f5fabf01a31f63bb -F ref=develop http://git.thunics.org/api/v4/projects/505/trigger/pipeline
+    - echo "trigger GoGateway2Project update MessageProto..."
+    - curl -X POST -F token=07ca976f5b9cfa54ce8beebe662590 -F ref=develop http://git.thunics.org/api/v4/projects/611/trigger/pipeline
+    - echo "trigger GoRealTimeStreams update MessageProto.. http://git.thunics.com/dp/GoRealTimeStreams/pipelines"
+    - echo "jenkins.. http://bigjenkins.thunics.org/job/dp-realtime-to-stream/"
+    - curl -X POST -F token=25d5649e41c37ab168d0ca8dfa47e0 -F ref=develop http://git.thunics.org/api/v4/projects/752/trigger/pipeline
+    - echo "trigger GoDataStreamToClickhouse update MessageProto.. http://git.thunics.com/dp/GoDataStreamToClickHouse/pipelines"
+    - echo "jenkins.. http://bigjenkins.thunics.org/job/dp-datastream-to-clickhouse/"
+    - curl -X POST -F token=5e96dd3ac66d5c386f7ef5b05d067e -F ref=develop http://git.thunics.org/api/v4/projects/771/trigger/pipeline
+    - echo "trigger ClickhouseAPI update MessageProto.. http://git.thunics.com/dp/ClickhouseAPI/pipelines"
+    - echo "jenkins.. http://bigjenkins.thunics.org/job/clickhouse_api/"
+    - curl -X POST -F token=98579274c917242e53016fb43977a7 -F ref=develop http://git.thunics.org/api/v4/projects/535/trigger/pipeline
+  only:
+    - master
+    - tags
+  when: manual
+  tags:
+    - gitlab-runner-db-test01
+
+dynamic_proto:
+  stage: dynamic_proto
+  image: docker-registry.thunics.org:5000/dp-rebuild-env:v1.1.1-base
+  script:
+    - apk add jq
+    - export COMPILE_PATH=.ProtoUpdate
+    - mkdir ${COMPILE_PATH}
+    - cd ${COMPILE_PATH}
+    - echo "MessageProto branch:${CI_COMMIT_REF_NAME}"
+    - git clone -b ${CI_COMMIT_REF_NAME} http://git.thunics.com/dp/MessageProto.git
+    - git clone -b master http://git.thunics.com/embedded/wsn-data.git
+    - cp -rf MessageProto/make/tofilesystem .
+    - chmod 777 tofilesystem/*.sh
+    - rm -rf wsn-data/docs wsn-data/tools wsn-data/user_json wsn-data/instruction_json wsn-data/.git
+    - rm -rf MessageProto/.git MessageProto/CompileMessgeProto MessageProto/make
+    - tar czvf MessageDesc.tar.gz MessageProto wsn-data
+    - ./tofilesystem/proto_desc.sh
+    - ./tofilesystem/push_message_desc.sh
+    - ls -l 
+    - cd .. && rm -rf ${COMPILE_PATH}
+  only:
+    - master
+    - tags
+  when: manual
+  tags:
+    - gitlab-runner-db-test01
